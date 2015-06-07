@@ -13541,6 +13541,7 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 <part name="SUPPLY9" library="supply2" deviceset="+12V" device=""/>
 <part name="SUPPLY16" library="supply2" deviceset="+5V" device=""/>
 <part name="SUPPLY19" library="supply2" deviceset="GND" device=""/>
+<part name="SUPPLY20" library="supply2" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -13577,7 +13578,7 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 <instance part="SUPPLY17" gate="GND" x="99.06" y="43.18"/>
 <instance part="SUPPLY18" gate="+12V" x="106.68" y="86.36"/>
 <instance part="SUPPLY21" gate="+12V" x="99.06" y="86.36"/>
-<instance part="SW1" gate="A" x="-55.88" y="38.1" rot="R90"/>
+<instance part="SW1" gate="A" x="-53.34" y="38.1" rot="R270"/>
 <instance part="M" gate="-1" x="119.38" y="66.04"/>
 <instance part="M" gate="-2" x="119.38" y="63.5"/>
 <instance part="SUPPLY14" gate="GND" x="35.56" y="58.42"/>
@@ -13590,6 +13591,7 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 <instance part="SUPPLY9" gate="+12V" x="38.1" y="109.22"/>
 <instance part="SUPPLY16" gate="+5V" x="48.26" y="109.22"/>
 <instance part="SUPPLY19" gate="GND" x="43.18" y="93.98"/>
+<instance part="SUPPLY20" gate="GND" x="-45.72" y="66.04" rot="R270"/>
 </instances>
 <busses>
 </busses>
@@ -13651,20 +13653,20 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 <segment>
 <pinref part="SUPPLY12" gate="GND" pin="GND"/>
 <wire x1="-50.8" y1="25.4" x2="-50.8" y2="27.94" width="0.1524" layer="91"/>
-<wire x1="-50.8" y1="27.94" x2="-50.8" y2="30.48" width="0.1524" layer="91"/>
-<wire x1="-53.34" y1="30.48" x2="-53.34" y2="27.94" width="0.1524" layer="91"/>
-<wire x1="-53.34" y1="27.94" x2="-50.8" y2="27.94" width="0.1524" layer="91"/>
-<wire x1="-55.88" y1="30.48" x2="-55.88" y2="27.94" width="0.1524" layer="91"/>
-<wire x1="-55.88" y1="27.94" x2="-53.34" y2="27.94" width="0.1524" layer="91"/>
-<wire x1="-58.42" y1="30.48" x2="-58.42" y2="27.94" width="0.1524" layer="91"/>
 <wire x1="-58.42" y1="27.94" x2="-55.88" y2="27.94" width="0.1524" layer="91"/>
-<junction x="-50.8" y="27.94"/>
-<junction x="-53.34" y="27.94"/>
+<pinref part="SW1" gate="A" pin="1"/>
+<wire x1="-55.88" y1="27.94" x2="-53.34" y2="27.94" width="0.1524" layer="91"/>
+<wire x1="-53.34" y1="27.94" x2="-50.8" y2="27.94" width="0.1524" layer="91"/>
+<wire x1="-58.42" y1="30.48" x2="-58.42" y2="27.94" width="0.1524" layer="91"/>
+<pinref part="SW1" gate="A" pin="2"/>
+<wire x1="-55.88" y1="30.48" x2="-55.88" y2="27.94" width="0.1524" layer="91"/>
+<pinref part="SW1" gate="A" pin="3"/>
+<wire x1="-53.34" y1="30.48" x2="-53.34" y2="27.94" width="0.1524" layer="91"/>
+<pinref part="SW1" gate="A" pin="4"/>
+<wire x1="-50.8" y1="30.48" x2="-50.8" y2="27.94" width="0.1524" layer="91"/>
 <junction x="-55.88" y="27.94"/>
-<pinref part="SW1" gate="A" pin="5"/>
-<pinref part="SW1" gate="A" pin="6"/>
-<pinref part="SW1" gate="A" pin="7"/>
-<pinref part="SW1" gate="A" pin="8"/>
+<junction x="-53.34" y="27.94"/>
+<junction x="-50.8" y="27.94"/>
 </segment>
 <segment>
 <pinref part="H_BRIDGE" gate="G$1" pin="GND1"/>
@@ -13686,6 +13688,10 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 <pinref part="H_BRIDGE" gate="G$1" pin="2A"/>
 <wire x1="40.64" y1="45.72" x2="43.18" y2="45.72" width="0.1524" layer="91"/>
 <junction x="40.64" y="55.88"/>
+<pinref part="CONTROLLER" gate="G$1" pin="AN6/RC2"/>
+<wire x1="0" y1="66.04" x2="35.56" y2="66.04" width="0.1524" layer="91"/>
+<wire x1="35.56" y1="66.04" x2="35.56" y2="60.96" width="0.1524" layer="91"/>
+<junction x="35.56" y="60.96"/>
 </segment>
 <segment>
 <pinref part="D2" gate="1" pin="A"/>
@@ -13707,11 +13713,14 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 <pinref part="SUPPLY19" gate="GND" pin="GND"/>
 <junction x="43.18" y="96.52"/>
 </segment>
-</net>
-<net name="N$2" class="0">
 <segment>
-<pinref part="CONTROLLER" gate="G$1" pin="AN6/RC2"/>
-<wire x1="0" y1="66.04" x2="25.4" y2="66.04" width="0.1524" layer="91"/>
+<pinref part="CONTROLLER" gate="G$1" pin="RA3/MCLR/VPP"/>
+<pinref part="SUPPLY20" gate="GND" pin="GND"/>
+<wire x1="-40.64" y1="66.04" x2="-43.18" y2="66.04" width="0.1524" layer="91"/>
+<wire x1="-43.18" y1="66.04" x2="-43.18" y2="68.58" width="0.1524" layer="91"/>
+<pinref part="CONTROLLER" gate="G$1" pin="RA2/AN2/T0CKI/INT"/>
+<wire x1="-43.18" y1="68.58" x2="-40.64" y2="68.58" width="0.1524" layer="91"/>
+<junction x="-43.18" y="66.04"/>
 </segment>
 </net>
 <net name="+12V" class="0">
@@ -13856,45 +13865,11 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 </net>
 <net name="N$24" class="0">
 <segment>
-<pinref part="CONTROLLER" gate="G$1" pin="RA3/MCLR/VPP"/>
-<wire x1="-40.64" y1="66.04" x2="-43.18" y2="66.04" width="0.1524" layer="91"/>
-<wire x1="-43.18" y1="66.04" x2="-43.18" y2="43.18" width="0.1524" layer="91"/>
-<wire x1="-43.18" y1="43.18" x2="12.7" y2="43.18" width="0.1524" layer="91"/>
-<wire x1="12.7" y1="43.18" x2="12.7" y2="2.54" width="0.1524" layer="91"/>
+<wire x1="12.7" y1="53.34" x2="12.7" y2="2.54" width="0.1524" layer="91"/>
 <pinref part="TIME_30M" gate="G$1" pin="A"/>
 <wire x1="12.7" y1="2.54" x2="22.86" y2="2.54" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$4" class="0">
-<segment>
-<wire x1="-50.8" y1="45.72" x2="-50.8" y2="58.42" width="0.1524" layer="91"/>
-<pinref part="CONTROLLER" gate="G$1" pin="RB4/AN10/SDI/SDO"/>
-<wire x1="-50.8" y1="58.42" x2="-40.64" y2="58.42" width="0.1524" layer="91"/>
-<pinref part="SW1" gate="A" pin="1"/>
-</segment>
-</net>
-<net name="N$5" class="0">
-<segment>
-<pinref part="CONTROLLER" gate="G$1" pin="RB5/AN11/RX/DT"/>
-<wire x1="-40.64" y1="55.88" x2="-53.34" y2="55.88" width="0.1524" layer="91"/>
-<wire x1="-53.34" y1="55.88" x2="-53.34" y2="45.72" width="0.1524" layer="91"/>
-<pinref part="SW1" gate="A" pin="2"/>
-</segment>
-</net>
-<net name="N$7" class="0">
-<segment>
-<pinref part="CONTROLLER" gate="G$1" pin="RB6/SCK/SCL"/>
-<wire x1="-40.64" y1="53.34" x2="-55.88" y2="53.34" width="0.1524" layer="91"/>
-<wire x1="-55.88" y1="53.34" x2="-55.88" y2="45.72" width="0.1524" layer="91"/>
-<pinref part="SW1" gate="A" pin="3"/>
-</segment>
-</net>
-<net name="N$9" class="0">
-<segment>
-<pinref part="CONTROLLER" gate="G$1" pin="RB7/TX/CK"/>
-<wire x1="-40.64" y1="50.8" x2="-58.42" y2="50.8" width="0.1524" layer="91"/>
-<wire x1="-58.42" y1="50.8" x2="-58.42" y2="45.72" width="0.1524" layer="91"/>
-<pinref part="SW1" gate="A" pin="4"/>
+<pinref part="CONTROLLER" gate="G$1" pin="AN9/RC7"/>
+<wire x1="12.7" y1="53.34" x2="0" y2="53.34" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$14" class="0">
@@ -13970,6 +13945,42 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 <pinref part="CONTROLLER" gate="G$1" pin="AN5/RC1"/>
 <wire x1="0" y1="68.58" x2="17.78" y2="68.58" width="0.1524" layer="91"/>
 <label x="2.54" y="68.58" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="N$1" class="0">
+<segment>
+<wire x1="-50.8" y1="48.26" x2="-48.26" y2="50.8" width="0.1524" layer="91"/>
+<pinref part="CONTROLLER" gate="G$1" pin="RB7/TX/CK"/>
+<wire x1="-48.26" y1="50.8" x2="-40.64" y2="50.8" width="0.1524" layer="91"/>
+<pinref part="SW1" gate="A" pin="5"/>
+<wire x1="-50.8" y1="48.26" x2="-50.8" y2="45.72" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$4" class="0">
+<segment>
+<pinref part="CONTROLLER" gate="G$1" pin="RB6/SCK/SCL"/>
+<wire x1="-40.64" y1="53.34" x2="-50.8" y2="53.34" width="0.1524" layer="91"/>
+<wire x1="-50.8" y1="53.34" x2="-53.34" y2="50.8" width="0.1524" layer="91"/>
+<pinref part="SW1" gate="A" pin="6"/>
+<wire x1="-53.34" y1="50.8" x2="-53.34" y2="45.72" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$5" class="0">
+<segment>
+<pinref part="CONTROLLER" gate="G$1" pin="RB5/AN11/RX/DT"/>
+<wire x1="-40.64" y1="55.88" x2="-53.34" y2="55.88" width="0.1524" layer="91"/>
+<wire x1="-53.34" y1="55.88" x2="-55.88" y2="53.34" width="0.1524" layer="91"/>
+<pinref part="SW1" gate="A" pin="7"/>
+<wire x1="-55.88" y1="53.34" x2="-55.88" y2="45.72" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$7" class="0">
+<segment>
+<pinref part="CONTROLLER" gate="G$1" pin="RB4/AN10/SDI/SDO"/>
+<wire x1="-40.64" y1="58.42" x2="-53.34" y2="58.42" width="0.1524" layer="91"/>
+<wire x1="-53.34" y1="58.42" x2="-58.42" y2="53.34" width="0.1524" layer="91"/>
+<pinref part="SW1" gate="A" pin="8"/>
+<wire x1="-58.42" y1="53.34" x2="-58.42" y2="45.72" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
