@@ -1,0 +1,2810 @@
+
+
+Microchip Technology PIC LITE Macro Assembler V1.34 build -361300703 
+                                                                                               Sun Jun 07 14:53:33 2015
+
+Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
+     1                           	processor	16F690
+     2                           	opt	pw 120
+     3                           	opt	lm
+     4                           	psect	text0,local,class=CODE,merge=1,delta=2
+     5                           	psect	cinit,global,class=CODE,merge=1,delta=2
+     6                           	psect	bssBANK0,global,class=BANK0,space=1,delta=1
+     7                           	psect	cstackCOMMON,global,class=COMMON,space=1,delta=1
+     8                           	psect	cstackBANK0,global,class=BANK0,space=1,delta=1
+     9                           	psect	maintext,global,class=CODE,split=1,delta=2
+    10                           	psect	text1,local,class=CODE,merge=1,delta=2
+    11                           	psect	text2,local,class=CODE,merge=1,delta=2
+    12                           	psect	text3,local,class=CODE,merge=1,delta=2
+    13                           	psect	text4,local,class=CODE,merge=1,delta=2
+    14                           	psect	text5,local,class=CODE,merge=1,delta=2
+    15                           	psect	text6,local,class=CODE,merge=1,delta=2
+    16                           	psect	text7,local,class=CODE,merge=1,delta=2
+    17                           	psect	text8,local,class=CODE,merge=1,delta=2
+    18                           	psect	text9,local,class=CODE,merge=1,delta=2
+    19                           	psect	text10,local,class=CODE,merge=1,delta=2
+    20                           	psect	text11,local,class=CODE,merge=1,delta=2
+    21                           	psect	text12,local,class=CODE,merge=1,delta=2
+    22                           	psect	text13,local,class=CODE,merge=1,delta=2
+    23                           	psect	text14,local,class=CODE,merge=1,delta=2
+    24                           	psect	text15,local,class=CODE,merge=1,delta=2
+    25                           	psect	text16,local,class=CODE,merge=1,delta=2
+    26                           	psect	text17,local,class=CODE,merge=1,delta=2
+    27                           	psect	functab,global,reloc=256,class=CODE,delta=2
+    28                           	dabs	1,0x7E,2
+    29  0000                     	;# 
+    30  0001                     	;# 
+    31  0002                     	;# 
+    32  0003                     	;# 
+    33  0004                     	;# 
+    34  0005                     	;# 
+    35  0006                     	;# 
+    36  0007                     	;# 
+    37  000A                     	;# 
+    38  000B                     	;# 
+    39  000C                     	;# 
+    40  000D                     	;# 
+    41  000E                     	;# 
+    42  000E                     	;# 
+    43  000F                     	;# 
+    44  0010                     	;# 
+    45  0011                     	;# 
+    46  0012                     	;# 
+    47  0013                     	;# 
+    48  0014                     	;# 
+    49  0015                     	;# 
+    50  0015                     	;# 
+    51  0016                     	;# 
+    52  0017                     	;# 
+    53  0018                     	;# 
+    54  0019                     	;# 
+    55  001A                     	;# 
+    56  001C                     	;# 
+    57  001D                     	;# 
+    58  001E                     	;# 
+    59  001F                     	;# 
+    60  0081                     	;# 
+    61  0085                     	;# 
+    62  0086                     	;# 
+    63  0087                     	;# 
+    64  008C                     	;# 
+    65  008D                     	;# 
+    66  008E                     	;# 
+    67  008F                     	;# 
+    68  0090                     	;# 
+    69  0092                     	;# 
+    70  0093                     	;# 
+    71  0093                     	;# 
+    72  0093                     	;# 
+    73  0094                     	;# 
+    74  0095                     	;# 
+    75  0095                     	;# 
+    76  0096                     	;# 
+    77  0096                     	;# 
+    78  0097                     	;# 
+    79  0098                     	;# 
+    80  0099                     	;# 
+    81  009A                     	;# 
+    82  009B                     	;# 
+    83  009E                     	;# 
+    84  009F                     	;# 
+    85  010C                     	;# 
+    86  010C                     	;# 
+    87  010D                     	;# 
+    88  010E                     	;# 
+    89  010F                     	;# 
+    90  0115                     	;# 
+    91  0116                     	;# 
+    92  0118                     	;# 
+    93  0119                     	;# 
+    94  011A                     	;# 
+    95  011B                     	;# 
+    96  011E                     	;# 
+    97  011F                     	;# 
+    98  018C                     	;# 
+    99  018D                     	;# 
+   100  019D                     	;# 
+   101  019E                     	;# 
+   102  0001                     _TMR0	set	1
+   103  0028                     _RA0	set	40
+   104  0029                     _RA1	set	41
+   105  002C                     _RA4	set	44
+   106  002D                     _RA5	set	45
+   107  0034                     _RB4	set	52
+   108  0035                     _RB5	set	53
+   109  0036                     _RB6	set	54
+   110  0037                     _RB7	set	55
+   111  0038                     _RC0	set	56
+   112  0039                     _RC1	set	57
+   113  003B                     _RC3	set	59
+   114  003C                     _RC4	set	60
+   115  003D                     _RC5	set	61
+   116  003E                     _RC6	set	62
+   117  003F                     _RC7	set	63
+   118  0081                     _OPTION_REG	set	129
+   119  0095                     _WPUA	set	149
+   120  047C                     _IRCF0	set	1148
+   121  047D                     _IRCF1	set	1149
+   122  047E                     _IRCF2	set	1150
+   123  040B                     _PSA	set	1035
+   124  0428                     _TRISA0	set	1064
+   125  0429                     _TRISA1	set	1065
+   126  042C                     _TRISA4	set	1068
+   127  042D                     _TRISA5	set	1069
+   128  0434                     _TRISB4	set	1076
+   129  0435                     _TRISB5	set	1077
+   130  0436                     _TRISB6	set	1078
+   131  0437                     _TRISB7	set	1079
+   132  0438                     _TRISC0	set	1080
+   133  0439                     _TRISC1	set	1081
+   134  043B                     _TRISC3	set	1083
+   135  043C                     _TRISC4	set	1084
+   136  043D                     _TRISC5	set	1085
+   137  043E                     _TRISC6	set	1086
+   138  043F                     _TRISC7	set	1087
+   139  011E                     _ANSEL	set	286
+   140  011F                     _ANSELH	set	287
+   141  0115                     _WPUB	set	277
+   142                           
+   143                           	psect	text0
+   144  0000                     __ptext0:	
+   145                           ; #config settings
+   146                           
+   147                           
+   148                           ;psect for function _flash
+   149  0000                     
+   150                           	psect	cinit
+   151  07FC                     start_initialization:	
+   152  07FC                     __initialization:	
+   153                           
+   154                           ; Clear objects allocated to BANK0
+   155  07FC  01B7               	clrf	__pbssBANK0& (0+127)
+   156  07FD                     end_of_initialization:	
+   157                           ;End of C runtime variable initialization code
+   158                           
+   159  07FD                     __end_of__initialization:	
+   160  07FD  0183               	clrf	3
+   161  07FE  118A  2EA4         	ljmp	_main	;jump to C main() function
+   162                           
+   163                           	psect	bssBANK0
+   164  0037                     __pbssBANK0:	
+   165  0037                     _halfHours:	
+   166  0037                     	ds	1
+   167                           
+   168                           	psect	cstackCOMMON
+   169  0070                     __pcstackCOMMON:	
+   170  0070                     ?_nop:	
+   171  0070                     ??_nop:	
+   172                           ; 0 bytes @ 0x0
+   173                           
+   174  0070                     ?_until_next_halfsecond:	
+   175                           ; 0 bytes @ 0x0
+   176                           
+   177  0070                     ?_for_entire_halfsecond:	
+   178                           ; 0 bytes @ 0x0
+   179                           
+   180  0070                     ?_for_entire_bounce:	
+   181                           ; 0 bytes @ 0x0
+   182                           
+   183  0070                     ?_wait_entire_halfsecond:	
+   184                           ; 0 bytes @ 0x0
+   185                           
+   186  0070                     ?_wait_until_next_halfsecond:	
+   187                           ; 0 bytes @ 0x0
+   188                           
+   189  0070                     ?_flash:	
+   190                           ; 0 bytes @ 0x0
+   191                           
+   192  0070                     ?_flash_all:	
+   193                           ; 0 bytes @ 0x0
+   194                           
+   195  0070                     ?_flash_halfHours:	
+   196                           ; 0 bytes @ 0x0
+   197                           
+   198  0070                     ?_flash_dip_and_buttons:	
+   199                           ; 0 bytes @ 0x0
+   200                           
+   201  0070                     ?_diagnose_buttons:	
+   202                           ; 0 bytes @ 0x0
+   203                           
+   204  0070                     ?_diagnose_lights:	
+   205                           ; 0 bytes @ 0x0
+   206                           
+   207  0070                     ?_wakeup:	
+   208                           ; 0 bytes @ 0x0
+   209                           
+   210  0070                     ?_setup:	
+   211                           ; 0 bytes @ 0x0
+   212                           
+   213  0070                     ??_setup:	
+   214                           ; 0 bytes @ 0x0
+   215                           
+   216  0070                     ?_motor_full_up:	
+   217                           ; 0 bytes @ 0x0
+   218                           
+   219  0070                     ?_run_cycle:	
+   220                           ; 0 bytes @ 0x0
+   221                           
+   222  0070                     ?_clock_test:	
+   223                           ; 0 bytes @ 0x0
+   224                           
+   225  0070                     flash@t2:	
+   226                           ; 0 bytes @ 0x0
+   227                           
+   228                           
+   229                           ; 1 bytes @ 0x0
+   230  0070                     	ds	1
+   231  0071                     flash@t3:	
+   232                           
+   233                           ; 1 bytes @ 0x1
+   234  0071                     	ds	1
+   235  0072                     flash@t4:	
+   236                           
+   237                           ; 1 bytes @ 0x2
+   238  0072                     	ds	1
+   239  0073                     flash@t5:	
+   240                           
+   241                           ; 1 bytes @ 0x3
+   242  0073                     	ds	1
+   243  0074                     ??_flash:	
+   244  0074                     flash@t1:	
+   245                           ; 0 bytes @ 0x4
+   246                           
+   247                           
+   248                           ; 1 bytes @ 0x4
+   249  0074                     	ds	1
+   250  0075                     ??_flash_all:	
+   251  0075                     ??_flash_halfHours:	
+   252                           ; 0 bytes @ 0x5
+   253                           
+   254  0075                     ??_flash_dip_and_buttons:	
+   255                           ; 0 bytes @ 0x5
+   256                           
+   257                           
+   258                           ; 0 bytes @ 0x5
+   259  0075                     	ds	8
+   260  007D                     ??_until_next_halfsecond:	
+   261  007D                     ??_for_entire_bounce:	
+   262                           ; 0 bytes @ 0xD
+   263                           
+   264  007D                     until_next_halfsecond@func:	
+   265                           ; 0 bytes @ 0xD
+   266                           
+   267  007D                     for_entire_bounce@func:	
+   268                           ; 1 bytes @ 0xD
+   269                           
+   270                           
+   271                           ; 1 bytes @ 0xD
+   272  007D                     	ds	1
+   273  007E                     ??_for_entire_halfsecond:	
+   274  007E                     ??_wait_entire_halfsecond:	
+   275                           ; 0 bytes @ 0xE
+   276                           
+   277  007E                     ??_wait_until_next_halfsecond:	
+   278                           ; 0 bytes @ 0xE
+   279                           
+   280  007E                     ??_diagnose_buttons:	
+   281                           ; 0 bytes @ 0xE
+   282                           
+   283                           
+   284                           	psect	cstackBANK0
+   285  0020                     __pcstackBANK0:	
+   286                           ; 0 bytes @ 0xE
+   287                           
+   288  0020                     ??_motor_full_up:	
+   289  0020                     ??_clock_test:	
+   290                           ; 0 bytes @ 0x0
+   291                           
+   292  0020                     for_entire_halfsecond@func:	
+   293                           ; 0 bytes @ 0x0
+   294                           
+   295                           
+   296                           ; 1 bytes @ 0x0
+   297  0020                     	ds	1
+   298  0021                     ??_diagnose_lights:	
+   299                           
+   300                           ; 0 bytes @ 0x1
+   301  0021                     	ds	1
+   302  0022                     diagnose_lights@i:	
+   303                           
+   304                           ; 1 bytes @ 0x2
+   305  0022                     	ds	1
+   306  0023                     ??_wakeup:	
+   307  0023                     clock_test@a:	
+   308                           ; 0 bytes @ 0x3
+   309                           
+   310                           
+   311                           ; 1 bytes @ 0x3
+   312  0023                     	ds	1
+   313  0024                     wakeup@i:	
+   314  0024                     motor_full_up@cycles:	
+   315                           ; 1 bytes @ 0x4
+   316                           
+   317  0024                     clock_test@b:	
+   318                           ; 1 bytes @ 0x4
+   319                           
+   320                           
+   321                           ; 1 bytes @ 0x4
+   322  0024                     	ds	1
+   323  0025                     motor_full_up@i:	
+   324  0025                     clock_test@c:	
+   325                           ; 1 bytes @ 0x5
+   326                           
+   327                           
+   328                           ; 1 bytes @ 0x5
+   329  0025                     	ds	1
+   330  0026                     ??_run_cycle:	
+   331  0026                     clock_test@d:	
+   332                           ; 0 bytes @ 0x6
+   333                           
+   334                           
+   335                           ; 1 bytes @ 0x6
+   336  0026                     	ds	1
+   337  0027                     run_cycle@idle:	
+   338  0027                     clock_test@i:	
+   339                           ; 1 bytes @ 0x7
+   340                           
+   341                           
+   342                           ; 1 bytes @ 0x7
+   343  0027                     	ds	1
+   344  0028                     run_cycle@minutesCounter:	
+   345                           
+   346                           ; 1 bytes @ 0x8
+   347  0028                     	ds	1
+   348  0029                     run_cycle@idleCounter:	
+   349                           
+   350                           ; 1 bytes @ 0x9
+   351  0029                     	ds	1
+   352  002A                     run_cycle@halfSecondCounter:	
+   353                           
+   354                           ; 1 bytes @ 0xA
+   355  002A                     	ds	1
+   356  002B                     run_cycle@shouldBreak:	
+   357                           
+   358                           ; 1 bytes @ 0xB
+   359  002B                     	ds	1
+   360  002C                     run_cycle@i:	
+   361                           
+   362                           ; 1 bytes @ 0xC
+   363  002C                     	ds	1
+   364  002D                     ?_main:	
+   365  002D                     main@argc:	
+   366                           ; 2 bytes @ 0xD
+   367                           
+   368                           
+   369                           ; 2 bytes @ 0xD
+   370  002D                     	ds	2
+   371  002F                     main@argv:	
+   372                           
+   373                           ; 2 bytes @ 0xF
+   374  002F                     	ds	2
+   375  0031                     ??_main:	
+   376                           
+   377                           ; 0 bytes @ 0x11
+   378  0031                     	ds	4
+   379  0035                     main@dipValue:	
+   380                           
+   381                           ; 1 bytes @ 0x15
+   382  0035                     	ds	1
+   383  0036                     main@i:	
+   384                           
+   385                           ; 1 bytes @ 0x16
+   386  0036                     	ds	1
+   387                           
+   388                           	psect	maintext
+   389  06A4                     __pmaintext:	
+   390 ;;
+   391 ;;Main: autosize = 0, tempsize = 4, incstack = 0, save=0
+   392 ;;
+   393 ;; *************** function _main *****************
+   394 ;; Defined at:
+   395 ;;		line 358 in file "main.c"
+   396 ;; Parameters:    Size  Location     Type
+   397 ;;  argc            2   13[BANK0 ] int 
+   398 ;;  argv            2   15[BANK0 ] PTR PTR unsigned char 
+   399 ;; Auto vars:     Size  Location     Type
+   400 ;;  i               1   22[BANK0 ] unsigned char 
+   401 ;;  dipValue        1   21[BANK0 ] unsigned char 
+   402 ;; Return value:  Size  Location     Type
+   403 ;;                  2   13[BANK0 ] int 
+   404 ;; Registers used:
+   405 ;;		wreg, status,2, status,0, pclath, cstack
+   406 ;; Tracked objects:
+   407 ;;		On entry : B00/0
+   408 ;;		On exit  : 0/0
+   409 ;;		Unchanged: 0/0
+   410 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+   411 ;;      Params:         0       4       0       0
+   412 ;;      Locals:         0       2       0       0
+   413 ;;      Temps:          0       4       0       0
+   414 ;;      Totals:         0      10       0       0
+   415 ;;Total ram usage:       10 bytes
+   416 ;; Hardware stack levels required when called:    7
+   417 ;; This function calls:
+   418 ;;		_clock_test
+   419 ;;		_for_entire_halfsecond
+   420 ;;		_run_cycle
+   421 ;;		_setup
+   422 ;;		_wakeup
+   423 ;; This function is called by:
+   424 ;;		Startup code after reset
+   425 ;; This function uses a non-reentrant model
+   426 ;;
+   427                           
+   428                           
+   429                           ;psect for function _main
+   430  06A4                     _main:	
+   431                           
+   432                           ;main.c: 359: setup();
+   433                           
+   434                           ;incstack = 0
+   435                           ; Regs used in _main: [wreg+status,2+status,0+pclath+cstack]
+   436  06A4  118A  2506  118A   	fcall	_setup
+   437                           
+   438                           ;main.c: 360: wakeup();
+   439  06A7  118A  27D7  118A   	fcall	_wakeup
+   440  06AA  2EBF               	goto	l1315
+   441  06AB                     l1319:	
+   442                           
+   443                           ;main.c: 371: clock_test();
+   444  06AB  118A  25C3  118A   	fcall	_clock_test
+   445                           
+   446                           ;main.c: 372: } else if(dipValue == 1) {
+   447  06AE  2EBF               	goto	l1315
+   448  06AF                     l1323:	
+   449                           
+   450                           ;main.c: 374: for(char i = 0; i < 32; i++) {
+   451  06AF  01B6               	clrf	main@i
+   452  06B0                     L1:	
+   453  06B0  3020               	movlw	32
+   454  06B1  0236               	subwf	main@i,w
+   455  06B2  1803               	btfsc	3,0
+   456  06B3  2EBF               	goto	l1315
+   457                           
+   458                           ;main.c: 375: for_entire_halfsecond(&flash_dip_and_buttons);
+   459  06B4  3007               	movlw	(low (fp__flash_dip_and_buttons-fpbase))& (0+255)
+   460  06B5  118A  247C  118A   	fcall	_for_entire_halfsecond
+   461  06B8  3001               	movlw	1
+   462  06B9  1283               	bcf	3,5	;RP0=0, select bank0
+   463  06BA  1303               	bcf	3,6	;RP1=0, select bank0
+   464  06BB  00B1               	movwf	??_main
+   465  06BC  0831               	movf	??_main,w
+   466  06BD  07B6               	addwf	main@i,f
+   467  06BE  2EB0               	goto	L1
+   468  06BF                     l1315:	
+   469                           ;main.c: 362: while(1) {
+   470                           
+   471                           ;main.c: 376: }
+   472                           ;main.c: 377: } else {
+   473                           
+   474                           
+   475                           ;main.c: 364: char dipValue =
+   476                           ;main.c: 365: ((!RB4) << 0) |
+   477                           ;main.c: 366: ((!RB5) << 1) |
+   478                           ;main.c: 367: ((!RB6) << 2) |
+   479                           ;main.c: 368: ((!RB7) << 3);
+   480  06BF  1003               	clrc
+   481  06C0  1283               	bcf	3,5	;RP0=0, select bank0
+   482  06C1  1303               	bcf	3,6	;RP1=0, select bank0
+   483  06C2  1F86               	btfss	6,7	;volatile
+   484  06C3  1403               	setc
+   485  06C4  3000               	movlw	0
+   486  06C5  1803               	skipnc
+   487  06C6  3001               	movlw	1
+   488  06C7  00B1               	movwf	??_main
+   489  06C8  3003               	movlw	3
+   490  06C9                     u1305:	
+   491  06C9  1003               	clrc
+   492  06CA  0DB1               	rlf	??_main,f
+   493  06CB  3EFF               	addlw	-1
+   494  06CC  1D03               	skipz
+   495  06CD  2EC9               	goto	u1305
+   496  06CE  1003               	clrc
+   497  06CF  1F06               	btfss	6,6	;volatile
+   498  06D0  1403               	setc
+   499  06D1  3000               	movlw	0
+   500  06D2  1803               	skipnc
+   501  06D3  3001               	movlw	1
+   502  06D4  00B2               	movwf	??_main+1
+   503  06D5  3002               	movlw	2
+   504  06D6                     u1315:	
+   505  06D6  1003               	clrc
+   506  06D7  0DB2               	rlf	??_main+1,f
+   507  06D8  3EFF               	addlw	-1
+   508  06D9  1D03               	skipz
+   509  06DA  2ED6               	goto	u1315
+   510  06DB  1003               	clrc
+   511  06DC  1E86               	btfss	6,5	;volatile
+   512  06DD  1403               	setc
+   513  06DE  3000               	movlw	0
+   514  06DF  1803               	skipnc
+   515  06E0  3001               	movlw	1
+   516  06E1  00B3               	movwf	??_main+2
+   517  06E2  3001               	movlw	1
+   518  06E3                     u1325:	
+   519  06E3  1003               	clrc
+   520  06E4  0DB3               	rlf	??_main+2,f
+   521  06E5  3EFF               	addlw	-1
+   522  06E6  1D03               	skipz
+   523  06E7  2EE3               	goto	u1325
+   524  06E8  1003               	clrc
+   525  06E9  1E06               	btfss	6,4	;volatile
+   526  06EA  1403               	setc
+   527  06EB  3000               	movlw	0
+   528  06EC  1803               	skipnc
+   529  06ED  3001               	movlw	1
+   530  06EE  0433               	iorwf	??_main+2,w
+   531  06EF  0432               	iorwf	??_main+1,w
+   532  06F0  0431               	iorwf	??_main,w
+   533  06F1  00B4               	movwf	??_main+3
+   534  06F2  0834               	movf	??_main+3,w
+   535  06F3  00B5               	movwf	main@dipValue
+   536                           
+   537                           ;main.c: 370: if(dipValue == 0) {
+   538  06F4  0835               	movf	main@dipValue,w
+   539  06F5  1903               	btfsc	3,2
+   540  06F6  2EAB               	goto	l1319
+   541  06F7  1283               	bcf	3,5	;RP0=0, select bank0
+   542  06F8  1303               	bcf	3,6	;RP1=0, select bank0
+   543  06F9  0335               	decf	main@dipValue,w
+   544  06FA  1903               	btfsc	3,2
+   545  06FB  2EAF               	goto	l1323
+   546                           
+   547                           ;main.c: 378: run_cycle();
+   548  06FC  118A  270E  118A   	fcall	_run_cycle
+   549  06FF  2EBF               	goto	l1315
+   550  0700                     __end_of_main:	
+   551                           ;main.c: 379: }
+   552                           ;main.c: 380: }
+   553                           ;main.c: 382: return (0);
+   554                           ;	Return value of _main is never used
+   555                           
+   556                           
+   557                           	psect	text1
+   558  07D7                     __ptext1:	
+   559 ;; *************** function _wakeup *****************
+   560 ;; Defined at:
+   561 ;;		line 177 in file "main.c"
+   562 ;; Parameters:    Size  Location     Type
+   563 ;;		None
+   564 ;; Auto vars:     Size  Location     Type
+   565 ;;  i               1    4[BANK0 ] unsigned char 
+   566 ;; Return value:  Size  Location     Type
+   567 ;;		None               void
+   568 ;; Registers used:
+   569 ;;		wreg, status,2, status,0, pclath, cstack
+   570 ;; Tracked objects:
+   571 ;;		On entry : 0/0
+   572 ;;		On exit  : 0/0
+   573 ;;		Unchanged: 0/0
+   574 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+   575 ;;      Params:         0       0       0       0
+   576 ;;      Locals:         0       1       0       0
+   577 ;;      Temps:          0       1       0       0
+   578 ;;      Totals:         0       2       0       0
+   579 ;;Total ram usage:        2 bytes
+   580 ;; Hardware stack levels used:    1
+   581 ;; Hardware stack levels required when called:    6
+   582 ;; This function calls:
+   583 ;;		_diagnose_buttons
+   584 ;;		_diagnose_lights
+   585 ;;		_for_entire_halfsecond
+   586 ;; This function is called by:
+   587 ;;		_main
+   588 ;; This function uses a non-reentrant model
+   589 ;;
+   590                           
+   591                           
+   592                           ;psect for function _wakeup
+   593  07D7                     _wakeup:	
+   594                           
+   595                           ;main.c: 179: diagnose_lights();
+   596                           
+   597                           ;incstack = 0
+   598                           ; Regs used in _wakeup: [wreg+status,2+status,0+pclath+cstack]
+   599  07D7  118A  24A1  118A   	fcall	_diagnose_lights
+   600                           
+   601                           ;main.c: 181: diagnose_buttons();
+   602  07DA  118A  257F  118A   	fcall	_diagnose_buttons
+   603                           
+   604                           ;main.c: 184: char i;
+   605                           ;main.c: 185: for(i = 0; i < 2 * 2; i++) {
+   606  07DD  1283               	bcf	3,5	;RP0=0, select bank0
+   607  07DE  1303               	bcf	3,6	;RP1=0, select bank0
+   608  07DF  01A4               	clrf	wakeup@i
+   609  07E0                     L2:	
+   610  07E0  3004               	movlw	4
+   611  07E1  0224               	subwf	wakeup@i,w
+   612  07E2  1803               	btfsc	3,0
+   613  07E3  0008               	return
+   614                           
+   615                           ;main.c: 186: for_entire_halfsecond(&flash_dip_and_buttons);
+   616  07E4  3007               	movlw	(low (fp__flash_dip_and_buttons-fpbase))& (0+255)
+   617  07E5  118A  247C  118A   	fcall	_for_entire_halfsecond
+   618  07E8  3001               	movlw	1
+   619  07E9  1283               	bcf	3,5	;RP0=0, select bank0
+   620  07EA  1303               	bcf	3,6	;RP1=0, select bank0
+   621  07EB  00A3               	movwf	??_wakeup
+   622  07EC  0823               	movf	??_wakeup,w
+   623  07ED  07A4               	addwf	wakeup@i,f
+   624  07EE  2FE0               	goto	L2
+   625  07EF                     __end_of_wakeup:	
+   626                           
+   627                           	psect	text2
+   628  04A1                     __ptext2:	
+   629 ;; *************** function _diagnose_lights *****************
+   630 ;; Defined at:
+   631 ;;		line 163 in file "main.c"
+   632 ;; Parameters:    Size  Location     Type
+   633 ;;		None
+   634 ;; Auto vars:     Size  Location     Type
+   635 ;;  i               1    2[BANK0 ] unsigned char 
+   636 ;; Return value:  Size  Location     Type
+   637 ;;		None               void
+   638 ;; Registers used:
+   639 ;;		wreg, status,2, status,0, pclath, cstack
+   640 ;; Tracked objects:
+   641 ;;		On entry : 0/0
+   642 ;;		On exit  : 0/0
+   643 ;;		Unchanged: 0/0
+   644 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+   645 ;;      Params:         0       0       0       0
+   646 ;;      Locals:         0       1       0       0
+   647 ;;      Temps:          0       1       0       0
+   648 ;;      Totals:         0       2       0       0
+   649 ;;Total ram usage:        2 bytes
+   650 ;; Hardware stack levels used:    1
+   651 ;; Hardware stack levels required when called:    5
+   652 ;; This function calls:
+   653 ;;		_wait_entire_halfsecond
+   654 ;; This function is called by:
+   655 ;;		_wakeup
+   656 ;; This function uses a non-reentrant model
+   657 ;;
+   658                           
+   659                           
+   660                           ;psect for function _diagnose_lights
+   661  04A1                     _diagnose_lights:	
+   662                           
+   663                           ;main.c: 165: char i;
+   664                           ;main.c: 166: for(i = 0; i < 2; i++) {
+   665                           
+   666                           ;incstack = 0
+   667                           ; Regs used in _diagnose_lights: [wreg+status,2+status,0+pclath+cstack]
+   668  04A1  1283               	bcf	3,5	;RP0=0, select bank0
+   669  04A2  1303               	bcf	3,6	;RP1=0, select bank0
+   670  04A3  01A2               	clrf	diagnose_lights@i
+   671  04A4                     L3:	
+   672  04A4  3002               	movlw	2
+   673  04A5  0222               	subwf	diagnose_lights@i,w
+   674  04A6  1803               	btfsc	3,0
+   675  04A7  0008               	return
+   676                           
+   677                           ;main.c: 167: { RC7 = 1; wait_entire_halfsecond(); RC7 = 0; }; { RC6 = 1; wait_entire_ha
+      +                          lfsecond(); RC6 = 0; };
+   678  04A8  1787               	bsf	7,7	;volatile
+   679  04A9  118A  2478  118A   	fcall	_wait_entire_halfsecond
+   680  04AC  1283               	bcf	3,5	;RP0=0, select bank0
+   681  04AD  1303               	bcf	3,6	;RP1=0, select bank0
+   682  04AE  1387               	bcf	7,7	;volatile
+   683  04AF  1707               	bsf	7,6	;volatile
+   684  04B0  118A  2478  118A   	fcall	_wait_entire_halfsecond
+   685  04B3  1283               	bcf	3,5	;RP0=0, select bank0
+   686  04B4  1303               	bcf	3,6	;RP1=0, select bank0
+   687  04B5  1307               	bcf	7,6	;volatile
+   688                           
+   689                           ;main.c: 168: { RC5 = 1; wait_entire_halfsecond(); RC5 = 0; }; { RC4 = 1; wait_entire_ha
+      +                          lfsecond(); RC4 = 0; };
+   690  04B6  1687               	bsf	7,5	;volatile
+   691  04B7  118A  2478  118A   	fcall	_wait_entire_halfsecond
+   692  04BA  1283               	bcf	3,5	;RP0=0, select bank0
+   693  04BB  1303               	bcf	3,6	;RP1=0, select bank0
+   694  04BC  1287               	bcf	7,5	;volatile
+   695  04BD  1607               	bsf	7,4	;volatile
+   696  04BE  118A  2478  118A   	fcall	_wait_entire_halfsecond
+   697  04C1  1283               	bcf	3,5	;RP0=0, select bank0
+   698  04C2  1303               	bcf	3,6	;RP1=0, select bank0
+   699  04C3  1207               	bcf	7,4	;volatile
+   700                           
+   701                           ;main.c: 169: { RC3 = 1; wait_entire_halfsecond(); RC3 = 0; };
+   702  04C4  1587               	bsf	7,3	;volatile
+   703  04C5  118A  2478  118A   	fcall	_wait_entire_halfsecond
+   704  04C8  1283               	bcf	3,5	;RP0=0, select bank0
+   705  04C9  1303               	bcf	3,6	;RP1=0, select bank0
+   706  04CA  1187               	bcf	7,3	;volatile
+   707  04CB  3001               	movlw	1
+   708  04CC  00A1               	movwf	??_diagnose_lights
+   709  04CD  0821               	movf	??_diagnose_lights,w
+   710  04CE  07A2               	addwf	diagnose_lights@i,f
+   711  04CF  2CA4               	goto	L3
+   712  04D0                     __end_of_diagnose_lights:	
+   713                           
+   714                           	psect	text3
+   715  057F                     __ptext3:	
+   716 ;; *************** function _diagnose_buttons *****************
+   717 ;; Defined at:
+   718 ;;		line 155 in file "main.c"
+   719 ;; Parameters:    Size  Location     Type
+   720 ;;		None
+   721 ;; Auto vars:     Size  Location     Type
+   722 ;;		None
+   723 ;; Return value:  Size  Location     Type
+   724 ;;		None               void
+   725 ;; Registers used:
+   726 ;;		wreg, status,2, status,0, pclath, cstack
+   727 ;; Tracked objects:
+   728 ;;		On entry : 0/0
+   729 ;;		On exit  : 0/0
+   730 ;;		Unchanged: 0/0
+   731 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+   732 ;;      Params:         0       0       0       0
+   733 ;;      Locals:         0       0       0       0
+   734 ;;      Temps:          0       0       0       0
+   735 ;;      Totals:         0       0       0       0
+   736 ;;Total ram usage:        0 bytes
+   737 ;; Hardware stack levels used:    1
+   738 ;; Hardware stack levels required when called:    5
+   739 ;; This function calls:
+   740 ;;		_wait_entire_halfsecond
+   741 ;; This function is called by:
+   742 ;;		_wakeup
+   743 ;; This function uses a non-reentrant model
+   744 ;;
+   745                           
+   746                           
+   747                           ;psect for function _diagnose_buttons
+   748  057F                     _diagnose_buttons:	
+   749                           
+   750                           ;main.c: 156: { if((!(RA1))) { while(1) { { RC7 = 1; wait_entire_halfsecond(); RC7 = 0; 
+      +                          }; wait_entire_halfsecond(); } } };
+   751                           
+   752                           ;incstack = 0
+   753                           ; Regs used in _diagnose_buttons: [wreg+status,2+status,0+pclath+cstack]
+   754  057F  1283               	bcf	3,5	;RP0=0, select bank0
+   755  0580  1303               	bcf	3,6	;RP1=0, select bank0
+   756  0581  1885               	btfsc	5,1	;volatile
+   757  0582  2D90               	goto	l135
+   758  0583                     l136:	
+   759  0583  1283               	bcf	3,5	;RP0=0, select bank0
+   760  0584  1303               	bcf	3,6	;RP1=0, select bank0
+   761  0585  1787               	bsf	7,7	;volatile
+   762  0586  118A  2478  118A   	fcall	_wait_entire_halfsecond
+   763  0589  1283               	bcf	3,5	;RP0=0, select bank0
+   764  058A  1303               	bcf	3,6	;RP1=0, select bank0
+   765  058B  1387               	bcf	7,7	;volatile
+   766  058C  118A  2478  118A   	fcall	_wait_entire_halfsecond
+   767  058F  2D83               	goto	l136
+   768  0590                     l135:	
+   769                           
+   770                           ;main.c: 157: { if((!(RA0))) { while(1) { { RC6 = 1; wait_entire_halfsecond(); RC6 = 0; 
+      +                          }; wait_entire_halfsecond(); } } };
+   771  0590  1283               	bcf	3,5	;RP0=0, select bank0
+   772  0591  1303               	bcf	3,6	;RP1=0, select bank0
+   773  0592  1805               	btfsc	5,0	;volatile
+   774  0593  2DA1               	goto	l139
+   775  0594                     l140:	
+   776  0594  1283               	bcf	3,5	;RP0=0, select bank0
+   777  0595  1303               	bcf	3,6	;RP1=0, select bank0
+   778  0596  1707               	bsf	7,6	;volatile
+   779  0597  118A  2478  118A   	fcall	_wait_entire_halfsecond
+   780  059A  1283               	bcf	3,5	;RP0=0, select bank0
+   781  059B  1303               	bcf	3,6	;RP1=0, select bank0
+   782  059C  1307               	bcf	7,6	;volatile
+   783  059D  118A  2478  118A   	fcall	_wait_entire_halfsecond
+   784  05A0  2D94               	goto	l140
+   785  05A1                     l139:	
+   786                           
+   787                           ;main.c: 158: { if((!(RA4))) { while(1) { { RC5 = 1; wait_entire_halfsecond(); RC5 = 0; 
+      +                          }; wait_entire_halfsecond(); } } };
+   788  05A1  1283               	bcf	3,5	;RP0=0, select bank0
+   789  05A2  1303               	bcf	3,6	;RP1=0, select bank0
+   790  05A3  1A05               	btfsc	5,4	;volatile
+   791  05A4  2DB2               	goto	l143
+   792  05A5                     l144:	
+   793  05A5  1283               	bcf	3,5	;RP0=0, select bank0
+   794  05A6  1303               	bcf	3,6	;RP1=0, select bank0
+   795  05A7  1687               	bsf	7,5	;volatile
+   796  05A8  118A  2478  118A   	fcall	_wait_entire_halfsecond
+   797  05AB  1283               	bcf	3,5	;RP0=0, select bank0
+   798  05AC  1303               	bcf	3,6	;RP1=0, select bank0
+   799  05AD  1287               	bcf	7,5	;volatile
+   800  05AE  118A  2478  118A   	fcall	_wait_entire_halfsecond
+   801  05B1  2DA5               	goto	l144
+   802  05B2                     l143:	
+   803                           
+   804                           ;main.c: 159: { if((!(RA5))) { while(1) { { RC4 = 1; wait_entire_halfsecond(); RC4 = 0; 
+      +                          }; wait_entire_halfsecond(); } } };
+   805  05B2  1283               	bcf	3,5	;RP0=0, select bank0
+   806  05B3  1303               	bcf	3,6	;RP1=0, select bank0
+   807  05B4  1A85               	btfsc	5,5	;volatile
+   808  05B5  0008               	return
+   809  05B6                     l148:	
+   810  05B6  1283               	bcf	3,5	;RP0=0, select bank0
+   811  05B7  1303               	bcf	3,6	;RP1=0, select bank0
+   812  05B8  1607               	bsf	7,4	;volatile
+   813  05B9  118A  2478  118A   	fcall	_wait_entire_halfsecond
+   814  05BC  1283               	bcf	3,5	;RP0=0, select bank0
+   815  05BD  1303               	bcf	3,6	;RP1=0, select bank0
+   816  05BE  1207               	bcf	7,4	;volatile
+   817  05BF  118A  2478  118A   	fcall	_wait_entire_halfsecond
+   818  05C2  2DB6               	goto	l148
+   819  05C3                     __end_of_diagnose_buttons:	
+   820                           
+   821                           	psect	text4
+   822  0506                     __ptext4:	
+   823 ;; *************** function _setup *****************
+   824 ;; Defined at:
+   825 ;;		line 190 in file "main.c"
+   826 ;; Parameters:    Size  Location     Type
+   827 ;;		None
+   828 ;; Auto vars:     Size  Location     Type
+   829 ;;		None
+   830 ;; Return value:  Size  Location     Type
+   831 ;;		None               void
+   832 ;; Registers used:
+   833 ;;		wreg, status,2
+   834 ;; Tracked objects:
+   835 ;;		On entry : 0/0
+   836 ;;		On exit  : 0/0
+   837 ;;		Unchanged: 0/0
+   838 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+   839 ;;      Params:         0       0       0       0
+   840 ;;      Locals:         0       0       0       0
+   841 ;;      Temps:          0       0       0       0
+   842 ;;      Totals:         0       0       0       0
+   843 ;;Total ram usage:        0 bytes
+   844 ;; Hardware stack levels used:    1
+   845 ;; This function calls:
+   846 ;;		Nothing
+   847 ;; This function is called by:
+   848 ;;		_main
+   849 ;; This function uses a non-reentrant model
+   850 ;;
+   851                           
+   852                           
+   853                           ;psect for function _setup
+   854  0506                     _setup:	
+   855                           
+   856                           ;main.c: 191: RC7 = RC6 = RC5 = RC4 = RC3 = 0;
+   857                           
+   858                           ;incstack = 0
+   859                           ; Regs used in _setup: [wreg+status,2]
+   860  0506  1283               	bcf	3,5	;RP0=0, select bank0
+   861  0507  1303               	bcf	3,6	;RP1=0, select bank0
+   862  0508  1187               	bcf	7,3	;volatile
+   863  0509  1207               	bcf	7,4	;volatile
+   864  050A  1287               	bcf	7,5	;volatile
+   865  050B  1307               	bcf	7,6	;volatile
+   866  050C  1387               	bcf	7,7	;volatile
+   867                           
+   868                           ;main.c: 192: RC0 = RC1 = 0;
+   869  050D  1087               	bcf	7,1	;volatile
+   870  050E  1007               	bcf	7,0	;volatile
+   871                           
+   872                           ;main.c: 194: ANSEL = 0;
+   873  050F  1283               	bcf	3,5	;RP0=0, select bank2
+   874  0510  1703               	bsf	3,6	;RP1=1, select bank2
+   875  0511  019E               	clrf	30	;volatile
+   876                           
+   877                           ;main.c: 195: ANSELH = 0;
+   878  0512  019F               	clrf	31	;volatile
+   879                           
+   880                           ;main.c: 198: IRCF0 = IRCF1 = IRCF2 = 0;
+   881  0513  1683               	bsf	3,5	;RP0=1, select bank1
+   882  0514  1303               	bcf	3,6	;RP1=0, select bank1
+   883  0515  130F               	bcf	15,6	;volatile
+   884  0516  128F               	bcf	15,5	;volatile
+   885  0517  120F               	bcf	15,4	;volatile
+   886                           
+   887                           ;main.c: 201: WPUA = 0b11111111;
+   888  0518  30FF               	movlw	255
+   889  0519  0095               	movwf	21	;volatile
+   890                           
+   891                           ;main.c: 202: WPUB = 0b11111111;
+   892  051A  30FF               	movlw	255
+   893  051B  1283               	bcf	3,5	;RP0=0, select bank2
+   894  051C  1703               	bsf	3,6	;RP1=1, select bank2
+   895  051D  0095               	movwf	21	;volatile
+   896                           
+   897                           ;main.c: 211: OPTION_REG = 0b01000011;
+   898  051E  3043               	movlw	67
+   899  051F  1683               	bsf	3,5	;RP0=1, select bank1
+   900  0520  1303               	bcf	3,6	;RP1=0, select bank1
+   901  0521  0081               	movwf	1	;volatile
+   902                           
+   903                           ;main.c: 212: PSA = 0;
+   904  0522  1181               	bcf	1,3	;volatile
+   905                           
+   906                           ;main.c: 215: TRISC7 = 0; TRISC6 = 0;
+   907  0523  1387               	bcf	7,7	;volatile
+   908  0524  1307               	bcf	7,6	;volatile
+   909                           
+   910                           ;main.c: 216: TRISC5 = 0; TRISC4 = 0;
+   911  0525  1287               	bcf	7,5	;volatile
+   912  0526  1207               	bcf	7,4	;volatile
+   913                           
+   914                           ;main.c: 217: TRISC3 = 0;
+   915  0527  1187               	bcf	7,3	;volatile
+   916                           
+   917                           ;main.c: 218: TRISC0 = 0; TRISC1 = 0;
+   918  0528  1007               	bcf	7,0	;volatile
+   919  0529  1087               	bcf	7,1	;volatile
+   920                           
+   921                           ;main.c: 221: TRISA0 = 1; TRISA1 = 1;
+   922  052A  1405               	bsf	5,0	;volatile
+   923  052B  1485               	bsf	5,1	;volatile
+   924                           
+   925                           ;main.c: 222: TRISA4 = 1; TRISA5 = 1;
+   926  052C  1605               	bsf	5,4	;volatile
+   927  052D  1685               	bsf	5,5	;volatile
+   928                           
+   929                           ;main.c: 223: TRISB4 = 1; TRISB5 = 1;
+   930  052E  1606               	bsf	6,4	;volatile
+   931  052F  1686               	bsf	6,5	;volatile
+   932                           
+   933                           ;main.c: 224: TRISB6 = 1; TRISB7 = 1;
+   934  0530  1706               	bsf	6,6	;volatile
+   935  0531  1786               	bsf	6,7	;volatile
+   936                           
+   937                           ;main.c: 227: RC7 = RC6 = RC5 = RC4 = RC3 = 0;
+   938  0532  1283               	bcf	3,5	;RP0=0, select bank0
+   939  0533  1303               	bcf	3,6	;RP1=0, select bank0
+   940  0534  1187               	bcf	7,3	;volatile
+   941  0535  1207               	bcf	7,4	;volatile
+   942  0536  1287               	bcf	7,5	;volatile
+   943  0537  1307               	bcf	7,6	;volatile
+   944  0538  1387               	bcf	7,7	;volatile
+   945                           
+   946                           ;main.c: 228: RC0 = RC1 = 0;
+   947  0539  1087               	bcf	7,1	;volatile
+   948  053A  1007               	bcf	7,0	;volatile
+   949  053B  0008               	return
+   950  053C                     __end_of_setup:	
+   951                           
+   952                           	psect	text5
+   953  070E                     __ptext5:	
+   954 ;; *************** function _run_cycle *****************
+   955 ;; Defined at:
+   956 ;;		line 249 in file "main.c"
+   957 ;; Parameters:    Size  Location     Type
+   958 ;;		None
+   959 ;; Auto vars:     Size  Location     Type
+   960 ;;  i               1   12[BANK0 ] unsigned char 
+   961 ;;  shouldBreak     1   11[BANK0 ] unsigned char 
+   962 ;;  halfSecondCo    1   10[BANK0 ] unsigned char 
+   963 ;;  idleCounter     1    9[BANK0 ] unsigned char 
+   964 ;;  minutesCount    1    8[BANK0 ] unsigned char 
+   965 ;;  idle            1    7[BANK0 ] unsigned char 
+   966 ;; Return value:  Size  Location     Type
+   967 ;;		None               void
+   968 ;; Registers used:
+   969 ;;		wreg, status,2, status,0, pclath, cstack
+   970 ;; Tracked objects:
+   971 ;;		On entry : 0/0
+   972 ;;		On exit  : 0/0
+   973 ;;		Unchanged: 0/0
+   974 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+   975 ;;      Params:         0       0       0       0
+   976 ;;      Locals:         0       6       0       0
+   977 ;;      Temps:          0       1       0       0
+   978 ;;      Totals:         0       7       0       0
+   979 ;;Total ram usage:        7 bytes
+   980 ;; Hardware stack levels used:    1
+   981 ;; Hardware stack levels required when called:    5
+   982 ;; This function calls:
+   983 ;;		_flash_halfHours
+   984 ;;		_for_entire_bounce
+   985 ;;		_for_entire_halfsecond
+   986 ;;		_motor_full_up
+   987 ;;		_wait_entire_halfsecond
+   988 ;; This function is called by:
+   989 ;;		_main
+   990 ;; This function uses a non-reentrant model
+   991 ;;
+   992                           
+   993                           
+   994                           ;psect for function _run_cycle
+   995  070E                     _run_cycle:	
+   996                           
+   997                           ;main.c: 251: char idleCounter = 0;
+   998                           
+   999                           ;incstack = 0
+  1000                           ; Regs used in _run_cycle: [wreg+status,2+status,0+pclath+cstack]
+  1001  070E  1283               	bcf	3,5	;RP0=0, select bank0
+  1002  070F  1303               	bcf	3,6	;RP1=0, select bank0
+  1003  0710  01A9               	clrf	run_cycle@idleCounter
+  1004  0711                     l1189:	
+  1005                           ;main.c: 252: char idle;
+  1006                           ;main.c: 254: while(1) {
+  1007                           
+  1008                           
+  1009                           ;main.c: 255: flash_halfHours();
+  1010  0711  118A  24D0  118A   	fcall	_flash_halfHours
+  1011                           
+  1012                           ;main.c: 256: idle = 0;
+  1013  0714  1283               	bcf	3,5	;RP0=0, select bank0
+  1014  0715  1303               	bcf	3,6	;RP1=0, select bank0
+  1015  0716  01A7               	clrf	run_cycle@idle
+  1016                           
+  1017                           ;main.c: 257: if((!(RA4))) {
+  1018  0717  1A05               	btfsc	5,4	;volatile
+  1019  0718  2F1E               	goto	l174
+  1020                           
+  1021                           ;main.c: 258: RC0 = 1;
+  1022  0719  1407               	bsf	7,0	;volatile
+  1023  071A                     l175:	
+  1024                           ;main.c: 259: while((!(RA4))) { }
+  1025                           
+  1026  071A  1E05               	btfss	5,4	;volatile
+  1027  071B  2F1A               	goto	l175
+  1028                           
+  1029                           ;main.c: 260: RC0 = 0;
+  1030  071C  1007               	bcf	7,0	;volatile
+  1031                           
+  1032                           ;main.c: 261: } else if((!(RA5))) {
+  1033  071D  2F57               	goto	l1219
+  1034  071E                     l174:	
+  1035  071E  1A85               	btfsc	5,5	;volatile
+  1036  071F  2F25               	goto	l179
+  1037                           
+  1038                           ;main.c: 262: RC1 = 1;
+  1039  0720  1487               	bsf	7,1	;volatile
+  1040  0721                     l180:	
+  1041                           ;main.c: 263: while((!(RA5))) {}
+  1042                           
+  1043  0721  1E85               	btfss	5,5	;volatile
+  1044  0722  2F21               	goto	l180
+  1045                           
+  1046                           ;main.c: 264: RC1 = 0;
+  1047  0723  1087               	bcf	7,1	;volatile
+  1048                           
+  1049                           ;main.c: 265: } else if((!(RA0))) {
+  1050  0724  2F57               	goto	l1219
+  1051  0725                     l179:	
+  1052  0725  1805               	btfsc	5,0	;volatile
+  1053  0726  2F3D               	goto	l184
+  1054                           
+  1055                           ;main.c: 266: halfHours++;
+  1056  0727  3001               	movlw	1
+  1057  0728  00A6               	movwf	??_run_cycle
+  1058  0729  0826               	movf	??_run_cycle,w
+  1059  072A  07B7               	addwf	_halfHours,f
+  1060                           
+  1061                           ;main.c: 267: halfHours = halfHours % 32;
+  1062  072B  0837               	movf	_halfHours,w
+  1063  072C  391F               	andlw	31
+  1064  072D  00A6               	movwf	??_run_cycle
+  1065  072E  0826               	movf	??_run_cycle,w
+  1066  072F  00B7               	movwf	_halfHours
+  1067  0730                     l1205:	
+  1068                           ;main.c: 268: while((!(RA0))) flash_halfHours();
+  1069                           
+  1070  0730  1283               	bcf	3,5	;RP0=0, select bank0
+  1071  0731  1303               	bcf	3,6	;RP1=0, select bank0
+  1072  0732  1805               	btfsc	5,0	;volatile
+  1073  0733  2F38               	goto	l1207
+  1074  0734  118A  24D0  118A   	fcall	_flash_halfHours
+  1075  0737  2F30               	goto	l1205
+  1076  0738                     l1207:	
+  1077                           
+  1078                           ;main.c: 269: for_entire_bounce(&flash_halfHours);
+  1079  0738  3005               	movlw	(low (fp__flash_halfHours-fpbase))& (0+255)
+  1080  0739  118A  2492  118A   	fcall	_for_entire_bounce
+  1081                           
+  1082                           ;main.c: 270: } else if((!(RA1))) {
+  1083  073C  2F57               	goto	l1219
+  1084  073D                     l184:	
+  1085  073D  1885               	btfsc	5,1	;volatile
+  1086  073E  2F55               	goto	l189
+  1087                           
+  1088                           ;main.c: 271: halfHours += 4;
+  1089  073F  3004               	movlw	4
+  1090  0740  00A6               	movwf	??_run_cycle
+  1091  0741  0826               	movf	??_run_cycle,w
+  1092  0742  07B7               	addwf	_halfHours,f
+  1093                           
+  1094                           ;main.c: 272: halfHours = halfHours % 32;
+  1095  0743  0837               	movf	_halfHours,w
+  1096  0744  391F               	andlw	31
+  1097  0745  00A6               	movwf	??_run_cycle
+  1098  0746  0826               	movf	??_run_cycle,w
+  1099  0747  00B7               	movwf	_halfHours
+  1100  0748                     l1215:	
+  1101                           ;main.c: 273: while((!(RA1))) flash_halfHours();
+  1102                           
+  1103  0748  1283               	bcf	3,5	;RP0=0, select bank0
+  1104  0749  1303               	bcf	3,6	;RP1=0, select bank0
+  1105  074A  1885               	btfsc	5,1	;volatile
+  1106  074B  2F50               	goto	l1217
+  1107  074C  118A  24D0  118A   	fcall	_flash_halfHours
+  1108  074F  2F48               	goto	l1215
+  1109  0750                     l1217:	
+  1110                           
+  1111                           ;main.c: 274: for_entire_bounce(&flash_halfHours);
+  1112  0750  3005               	movlw	(low (fp__flash_halfHours-fpbase))& (0+255)
+  1113  0751  118A  2492  118A   	fcall	_for_entire_bounce
+  1114                           
+  1115                           ;main.c: 275: } else {
+  1116  0754  2F57               	goto	l1219
+  1117  0755                     l189:	
+  1118                           
+  1119                           ;main.c: 276: idle = 1;
+  1120  0755  01A7               	clrf	run_cycle@idle
+  1121  0756  0AA7               	incf	run_cycle@idle,f
+  1122  0757                     l1219:	
+  1123                           
+  1124                           ;main.c: 277: }
+  1125                           ;main.c: 280: if(idle == 0) {
+  1126  0757  1283               	bcf	3,5	;RP0=0, select bank0
+  1127  0758  1303               	bcf	3,6	;RP1=0, select bank0
+  1128  0759  0827               	movf	run_cycle@idle,w
+  1129  075A  1D03               	btfss	3,2
+  1130  075B  2F5F               	goto	l1223
+  1131                           
+  1132                           ;main.c: 281: TMR0 = 0;
+  1133  075C  0181               	clrf	1	;volatile
+  1134                           
+  1135                           ;main.c: 282: idleCounter = 0;
+  1136  075D  01A9               	clrf	run_cycle@idleCounter
+  1137                           
+  1138                           ;main.c: 283: } else {
+  1139  075E  2F68               	goto	l1229
+  1140  075F                     l1223:	
+  1141                           
+  1142                           ;main.c: 284: if(TMR0 >= 210) {
+  1143  075F  30D2               	movlw	210
+  1144  0760  0201               	subwf	1,w	;volatile
+  1145  0761  1C03               	skipc
+  1146  0762  2F68               	goto	l1229
+  1147                           
+  1148                           ;main.c: 285: TMR0 = 0;
+  1149  0763  0181               	clrf	1	;volatile
+  1150                           
+  1151                           ;main.c: 286: idleCounter++;
+  1152  0764  3001               	movlw	1
+  1153  0765  00A6               	movwf	??_run_cycle
+  1154  0766  0826               	movf	??_run_cycle,w
+  1155  0767  07A9               	addwf	run_cycle@idleCounter,f
+  1156  0768                     l1229:	
+  1157                           
+  1158                           ;main.c: 287: }
+  1159                           ;main.c: 288: }
+  1160                           ;main.c: 291: if(halfHours > 0 && idleCounter >= 10) break;
+  1161  0768  0837               	movf	_halfHours,w
+  1162  0769  1903               	btfsc	3,2
+  1163  076A  2F11               	goto	l1189
+  1164  076B  300A               	movlw	10
+  1165  076C  0229               	subwf	run_cycle@idleCounter,w
+  1166  076D  1C03               	skipc
+  1167  076E  2F11               	goto	l1189
+  1168                           
+  1169                           ;main.c: 292: }
+  1170                           ;main.c: 294: char i;
+  1171                           ;main.c: 296: for(i = 0; i < 4; i++) {
+  1172  076F  01AC               	clrf	run_cycle@i
+  1173  0770  3004               	movlw	4
+  1174  0771  022C               	subwf	run_cycle@i,w
+  1175  0772  1803               	btfsc	3,0
+  1176  0773  2F85               	goto	l1247
+  1177  0774                     l1241:	
+  1178                           
+  1179                           ;main.c: 297: for_entire_halfsecond(&flash_halfHours);
+  1180  0774  3005               	movlw	(low (fp__flash_halfHours-fpbase))& (0+255)
+  1181  0775  118A  247C  118A   	fcall	_for_entire_halfsecond
+  1182                           
+  1183                           ;main.c: 298: wait_entire_halfsecond();
+  1184  0778  118A  2478  118A   	fcall	_wait_entire_halfsecond
+  1185  077B  3001               	movlw	1
+  1186  077C  1283               	bcf	3,5	;RP0=0, select bank0
+  1187  077D  1303               	bcf	3,6	;RP1=0, select bank0
+  1188  077E  00A6               	movwf	??_run_cycle
+  1189  077F  0826               	movf	??_run_cycle,w
+  1190  0780  07AC               	addwf	run_cycle@i,f
+  1191  0781  3004               	movlw	4
+  1192  0782  022C               	subwf	run_cycle@i,w
+  1193  0783  1C03               	skipc
+  1194  0784  2F74               	goto	l1241
+  1195  0785                     l1247:	
+  1196                           
+  1197                           ;main.c: 299: }
+  1198                           ;main.c: 304: char halfSecondCounter = 0;
+  1199  0785  01AA               	clrf	run_cycle@halfSecondCounter
+  1200                           
+  1201                           ;main.c: 305: char minutesCounter = 0;
+  1202  0786  01A8               	clrf	run_cycle@minutesCounter
+  1203                           
+  1204                           ;main.c: 306: char shouldBreak = 0;
+  1205  0787  01AB               	clrf	run_cycle@shouldBreak
+  1206                           
+  1207                           ;main.c: 307: while(!shouldBreak) {
+  1208  0788  2FD3               	goto	l1291
+  1209  0789                     l205:	
+  1210                           ;main.c: 308: while((TMR0 <= 210) && (shouldBreak == 0)) {
+  1211                           
+  1212                           
+  1213                           ;main.c: 309: if((!(RA4)) || (!(RA5))) {
+  1214  0789  1E05               	btfss	5,4	;volatile
+  1215  078A  2F8D               	goto	l1251
+  1216  078B  1A85               	btfsc	5,5	;volatile
+  1217  078C  2FA9               	goto	l1267
+  1218  078D                     l1251:	
+  1219                           
+  1220                           ;main.c: 311: for(i = 0; i < 4; i++) {
+  1221  078D  01AC               	clrf	run_cycle@i
+  1222  078E  3004               	movlw	4
+  1223  078F  022C               	subwf	run_cycle@i,w
+  1224  0790  1803               	btfsc	3,0
+  1225  0791  2FA3               	goto	l211
+  1226  0792                     l1257:	
+  1227                           
+  1228                           ;main.c: 312: for_entire_halfsecond(flash_all);
+  1229  0792  3003               	movlw	(low (fp__flash_all-fpbase))& (0+255)
+  1230  0793  118A  247C  118A   	fcall	_for_entire_halfsecond
+  1231                           
+  1232                           ;main.c: 313: wait_entire_halfsecond();
+  1233  0796  118A  2478  118A   	fcall	_wait_entire_halfsecond
+  1234  0799  3001               	movlw	1
+  1235  079A  1283               	bcf	3,5	;RP0=0, select bank0
+  1236  079B  1303               	bcf	3,6	;RP1=0, select bank0
+  1237  079C  00A6               	movwf	??_run_cycle
+  1238  079D  0826               	movf	??_run_cycle,w
+  1239  079E  07AC               	addwf	run_cycle@i,f
+  1240  079F  3004               	movlw	4
+  1241  07A0  022C               	subwf	run_cycle@i,w
+  1242  07A1  1C03               	skipc
+  1243  07A2  2F92               	goto	l1257
+  1244  07A3                     l211:	
+  1245                           ;main.c: 314: }
+  1246                           ;main.c: 315: while((!(RA4)) || (!(RA5))) { }
+  1247                           
+  1248  07A3  1A05               	btfsc	5,4	;volatile
+  1249  07A4  1E85               	btfss	5,5	;volatile
+  1250  07A5  2FA3               	goto	l211
+  1251                           
+  1252                           ;main.c: 316: shouldBreak = 1;
+  1253  07A6  01AB               	clrf	run_cycle@shouldBreak
+  1254  07A7  0AAB               	incf	run_cycle@shouldBreak,f
+  1255                           
+  1256                           ;main.c: 317: halfHours = 0;
+  1257  07A8  01B7               	clrf	_halfHours
+  1258  07A9                     l1267:	
+  1259  07A9  30D3               	movlw	211
+  1260  07AA  0201               	subwf	1,w	;volatile
+  1261  07AB  1803               	skipnc
+  1262  07AC  2FB0               	goto	l1271
+  1263  07AD  082B               	movf	run_cycle@shouldBreak,w
+  1264  07AE  1903               	btfsc	3,2
+  1265  07AF  2F89               	goto	l205
+  1266  07B0                     l1271:	
+  1267                           
+  1268                           ;main.c: 318: }
+  1269                           ;main.c: 319: }
+  1270                           ;main.c: 320: TMR0 = 0;
+  1271  07B0  0181               	clrf	1	;volatile
+  1272                           
+  1273                           ;main.c: 321: flash_halfHours();
+  1274  07B1  118A  24D0  118A   	fcall	_flash_halfHours
+  1275                           
+  1276                           ;main.c: 324: halfSecondCounter++;
+  1277  07B4  3001               	movlw	1
+  1278  07B5  1283               	bcf	3,5	;RP0=0, select bank0
+  1279  07B6  1303               	bcf	3,6	;RP1=0, select bank0
+  1280  07B7  00A6               	movwf	??_run_cycle
+  1281  07B8  0826               	movf	??_run_cycle,w
+  1282  07B9  07AA               	addwf	run_cycle@halfSecondCounter,f
+  1283                           
+  1284                           ;main.c: 325: if(halfSecondCounter == 120) {
+  1285  07BA  3078               	movlw	120
+  1286  07BB  062A               	xorwf	run_cycle@halfSecondCounter,w
+  1287  07BC  1D03               	btfss	3,2
+  1288  07BD  2FC3               	goto	l1283
+  1289                           
+  1290                           ;main.c: 326: halfSecondCounter = 0;
+  1291  07BE  01AA               	clrf	run_cycle@halfSecondCounter
+  1292                           
+  1293                           ;main.c: 327: minutesCounter++;
+  1294  07BF  3001               	movlw	1
+  1295  07C0  00A6               	movwf	??_run_cycle
+  1296  07C1  0826               	movf	??_run_cycle,w
+  1297  07C2  07A8               	addwf	run_cycle@minutesCounter,f
+  1298  07C3                     l1283:	
+  1299                           
+  1300                           ;main.c: 328: }
+  1301                           ;main.c: 331: if(minutesCounter == 30) {
+  1302  07C3  301E               	movlw	30
+  1303  07C4  0628               	xorwf	run_cycle@minutesCounter,w
+  1304  07C5  1D03               	btfss	3,2
+  1305  07C6  2FD3               	goto	l1291
+  1306                           
+  1307                           ;main.c: 332: halfHours--;
+  1308  07C7  3001               	movlw	1
+  1309  07C8  02B7               	subwf	_halfHours,f
+  1310                           
+  1311                           ;main.c: 335: if(halfHours == 0) {
+  1312  07C9  0837               	movf	_halfHours,w
+  1313  07CA  1D03               	btfss	3,2
+  1314  07CB  2FD3               	goto	l1291
+  1315                           
+  1316                           ;main.c: 336: motor_full_up();
+  1317  07CC  118A  2656  118A   	fcall	_motor_full_up
+  1318                           
+  1319                           ;main.c: 337: shouldBreak = 1;
+  1320  07CF  1283               	bcf	3,5	;RP0=0, select bank0
+  1321  07D0  1303               	bcf	3,6	;RP1=0, select bank0
+  1322  07D1  01AB               	clrf	run_cycle@shouldBreak
+  1323  07D2  0AAB               	incf	run_cycle@shouldBreak,f
+  1324  07D3                     l1291:	
+  1325  07D3  082B               	movf	run_cycle@shouldBreak,w
+  1326  07D4  1D03               	btfss	3,2
+  1327  07D5  0008               	return
+  1328  07D6  2FA9               	goto	l1267
+  1329  07D7                     __end_of_run_cycle:	
+  1330                           
+  1331                           	psect	text6
+  1332  0478                     __ptext6:	
+  1333 ;; *************** function _wait_entire_halfsecond *****************
+  1334 ;; Defined at:
+  1335 ;;		line 107 in file "main.c"
+  1336 ;; Parameters:    Size  Location     Type
+  1337 ;;		None
+  1338 ;; Auto vars:     Size  Location     Type
+  1339 ;;		None
+  1340 ;; Return value:  Size  Location     Type
+  1341 ;;		None               void
+  1342 ;; Registers used:
+  1343 ;;		wreg, status,2, status,0, pclath, cstack
+  1344 ;; Tracked objects:
+  1345 ;;		On entry : 0/0
+  1346 ;;		On exit  : 0/0
+  1347 ;;		Unchanged: 0/0
+  1348 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  1349 ;;      Params:         0       0       0       0
+  1350 ;;      Locals:         0       0       0       0
+  1351 ;;      Temps:          0       0       0       0
+  1352 ;;      Totals:         0       0       0       0
+  1353 ;;Total ram usage:        0 bytes
+  1354 ;; Hardware stack levels used:    1
+  1355 ;; Hardware stack levels required when called:    4
+  1356 ;; This function calls:
+  1357 ;;		_for_entire_halfsecond
+  1358 ;; This function is called by:
+  1359 ;;		_diagnose_buttons
+  1360 ;;		_diagnose_lights
+  1361 ;;		_run_cycle
+  1362 ;; This function uses a non-reentrant model
+  1363 ;;
+  1364                           
+  1365                           
+  1366                           ;psect for function _wait_entire_halfsecond
+  1367  0478                     _wait_entire_halfsecond:	
+  1368                           
+  1369                           ;main.c: 108: for_entire_halfsecond(nop);
+  1370                           
+  1371                           ;incstack = 0
+  1372                           ; Regs used in _wait_entire_halfsecond: [wreg+status,2+status,0+pclath+cstack]
+  1373  0478  3001               	movlw	(low (fp__nop-fpbase))& (0+255)
+  1374  0479  118A  247C         	fcall	_for_entire_halfsecond
+  1375  047B  0008               	return
+  1376  047C                     __end_of_wait_entire_halfsecond:	
+  1377                           
+  1378                           	psect	text7
+  1379  047C                     __ptext7:	
+  1380 ;; *************** function _for_entire_halfsecond *****************
+  1381 ;; Defined at:
+  1382 ;;		line 95 in file "main.c"
+  1383 ;; Parameters:    Size  Location     Type
+  1384 ;;  func            1    wreg     PTR FTN()void 
+  1385 ;;		 -> flash_dip_and_buttons(0), flash_halfHours(0), flash_all(0), nop(0), 
+  1386 ;; Auto vars:     Size  Location     Type
+  1387 ;;  func            1    0[BANK0 ] PTR FTN()void 
+  1388 ;;		 -> flash_dip_and_buttons(0), flash_halfHours(0), flash_all(0), nop(0), 
+  1389 ;; Return value:  Size  Location     Type
+  1390 ;;		None               void
+  1391 ;; Registers used:
+  1392 ;;		wreg, status,2, status,0, pclath, cstack
+  1393 ;; Tracked objects:
+  1394 ;;		On entry : 0/0
+  1395 ;;		On exit  : 0/0
+  1396 ;;		Unchanged: 0/0
+  1397 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  1398 ;;      Params:         0       0       0       0
+  1399 ;;      Locals:         0       1       0       0
+  1400 ;;      Temps:          0       0       0       0
+  1401 ;;      Totals:         0       1       0       0
+  1402 ;;Total ram usage:        1 bytes
+  1403 ;; Hardware stack levels used:    1
+  1404 ;; Hardware stack levels required when called:    3
+  1405 ;; This function calls:
+  1406 ;;		_until_next_halfsecond
+  1407 ;; This function is called by:
+  1408 ;;		_wait_entire_halfsecond
+  1409 ;;		_wakeup
+  1410 ;;		_run_cycle
+  1411 ;;		_main
+  1412 ;;		_display_halfHours_for_halfsecond
+  1413 ;; This function uses a non-reentrant model
+  1414 ;;
+  1415                           
+  1416                           
+  1417                           ;psect for function _for_entire_halfsecond
+  1418  047C                     _for_entire_halfsecond:	
+  1419                           
+  1420                           ;incstack = 0
+  1421                           ; Regs used in _for_entire_halfsecond: [wreg+status,2+status,0+pclath+cstack]
+  1422                           ;for_entire_halfsecond@func stored from wreg
+  1423  047C  1283               	bcf	3,5	;RP0=0, select bank0
+  1424  047D  1303               	bcf	3,6	;RP1=0, select bank0
+  1425  047E  00A0               	movwf	for_entire_halfsecond@func
+  1426                           
+  1427                           ;main.c: 96: TMR0 = 0;
+  1428  047F  0181               	clrf	1	;volatile
+  1429                           
+  1430                           ;main.c: 97: until_next_halfsecond(func);
+  1431  0480  0820               	movf	for_entire_halfsecond@func,w
+  1432  0481  118A  2484         	fcall	_until_next_halfsecond
+  1433  0483  0008               	return
+  1434  0484                     __end_of_for_entire_halfsecond:	
+  1435                           
+  1436                           	psect	text8
+  1437  0656                     __ptext8:	
+  1438 ;; *************** function _motor_full_up *****************
+  1439 ;; Defined at:
+  1440 ;;		line 231 in file "main.c"
+  1441 ;; Parameters:    Size  Location     Type
+  1442 ;;		None
+  1443 ;; Auto vars:     Size  Location     Type
+  1444 ;;  i               1    5[BANK0 ] unsigned char 
+  1445 ;;  cycles          1    4[BANK0 ] unsigned char 
+  1446 ;; Return value:  Size  Location     Type
+  1447 ;;		None               void
+  1448 ;; Registers used:
+  1449 ;;		wreg, status,2, status,0, pclath, cstack
+  1450 ;; Tracked objects:
+  1451 ;;		On entry : 0/0
+  1452 ;;		On exit  : 0/0
+  1453 ;;		Unchanged: 0/0
+  1454 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  1455 ;;      Params:         0       0       0       0
+  1456 ;;      Locals:         0       2       0       0
+  1457 ;;      Temps:          0       4       0       0
+  1458 ;;      Totals:         0       6       0       0
+  1459 ;;Total ram usage:        6 bytes
+  1460 ;; Hardware stack levels used:    1
+  1461 ;; Hardware stack levels required when called:    4
+  1462 ;; This function calls:
+  1463 ;;		_wait_until_next_halfsecond
+  1464 ;; This function is called by:
+  1465 ;;		_run_cycle
+  1466 ;; This function uses a non-reentrant model
+  1467 ;;
+  1468                           
+  1469                           
+  1470                           ;psect for function _motor_full_up
+  1471  0656                     _motor_full_up:	
+  1472                           
+  1473                           ;main.c: 232: char cycles =
+  1474                           ;main.c: 233: ((!RB4) << 0) |
+  1475                           ;main.c: 234: ((!RB5) << 1) |
+  1476                           ;main.c: 235: ((!RB6) << 2) |
+  1477                           ;main.c: 236: ((!RB7) << 3);
+  1478                           
+  1479                           ;incstack = 0
+  1480                           ; Regs used in _motor_full_up: [wreg+status,2+status,0+pclath+cstack]
+  1481  0656  1003               	clrc
+  1482  0657  1283               	bcf	3,5	;RP0=0, select bank0
+  1483  0658  1303               	bcf	3,6	;RP1=0, select bank0
+  1484  0659  1F86               	btfss	6,7	;volatile
+  1485  065A  1403               	setc
+  1486  065B  3000               	movlw	0
+  1487  065C  1803               	skipnc
+  1488  065D  3001               	movlw	1
+  1489  065E  00A0               	movwf	??_motor_full_up
+  1490  065F  3003               	movlw	3
+  1491  0660                     u955:	
+  1492  0660  1003               	clrc
+  1493  0661  0DA0               	rlf	??_motor_full_up,f
+  1494  0662  3EFF               	addlw	-1
+  1495  0663  1D03               	skipz
+  1496  0664  2E60               	goto	u955
+  1497  0665  1003               	clrc
+  1498  0666  1F06               	btfss	6,6	;volatile
+  1499  0667  1403               	setc
+  1500  0668  3000               	movlw	0
+  1501  0669  1803               	skipnc
+  1502  066A  3001               	movlw	1
+  1503  066B  00A1               	movwf	??_motor_full_up+1
+  1504  066C  3002               	movlw	2
+  1505  066D                     u965:	
+  1506  066D  1003               	clrc
+  1507  066E  0DA1               	rlf	??_motor_full_up+1,f
+  1508  066F  3EFF               	addlw	-1
+  1509  0670  1D03               	skipz
+  1510  0671  2E6D               	goto	u965
+  1511  0672  1003               	clrc
+  1512  0673  1E86               	btfss	6,5	;volatile
+  1513  0674  1403               	setc
+  1514  0675  3000               	movlw	0
+  1515  0676  1803               	skipnc
+  1516  0677  3001               	movlw	1
+  1517  0678  00A2               	movwf	??_motor_full_up+2
+  1518  0679  3001               	movlw	1
+  1519  067A                     u975:	
+  1520  067A  1003               	clrc
+  1521  067B  0DA2               	rlf	??_motor_full_up+2,f
+  1522  067C  3EFF               	addlw	-1
+  1523  067D  1D03               	skipz
+  1524  067E  2E7A               	goto	u975
+  1525  067F  1003               	clrc
+  1526  0680  1E06               	btfss	6,4	;volatile
+  1527  0681  1403               	setc
+  1528  0682  3000               	movlw	0
+  1529  0683  1803               	skipnc
+  1530  0684  3001               	movlw	1
+  1531  0685  0422               	iorwf	??_motor_full_up+2,w
+  1532  0686  0421               	iorwf	??_motor_full_up+1,w
+  1533  0687  0420               	iorwf	??_motor_full_up,w
+  1534  0688  00A3               	movwf	??_motor_full_up+3
+  1535  0689  0823               	movf	??_motor_full_up+3,w
+  1536  068A  00A4               	movwf	motor_full_up@cycles
+  1537                           
+  1538                           ;main.c: 237: char i;
+  1539                           ;main.c: 239: RC0 = 1;
+  1540  068B  1407               	bsf	7,0	;volatile
+  1541                           
+  1542                           ;main.c: 240: for(i = 0; i < cycles; i++) {
+  1543  068C  01A5               	clrf	motor_full_up@i
+  1544  068D                     l1123:	
+  1545  068D  0824               	movf	motor_full_up@cycles,w
+  1546  068E  0225               	subwf	motor_full_up@i,w
+  1547  068F  1803               	btfsc	3,0
+  1548  0690  2EA2               	goto	l169
+  1549                           
+  1550                           ;main.c: 241: RC7 = 1;
+  1551  0691  1787               	bsf	7,7	;volatile
+  1552                           
+  1553                           ;main.c: 242: wait_until_next_halfsecond();
+  1554  0692  118A  2474  118A   	fcall	_wait_until_next_halfsecond
+  1555                           
+  1556                           ;main.c: 243: RC7 = 0;
+  1557  0695  1283               	bcf	3,5	;RP0=0, select bank0
+  1558  0696  1303               	bcf	3,6	;RP1=0, select bank0
+  1559  0697  1387               	bcf	7,7	;volatile
+  1560                           
+  1561                           ;main.c: 244: wait_until_next_halfsecond();
+  1562  0698  118A  2474  118A   	fcall	_wait_until_next_halfsecond
+  1563  069B  3001               	movlw	1
+  1564  069C  1283               	bcf	3,5	;RP0=0, select bank0
+  1565  069D  1303               	bcf	3,6	;RP1=0, select bank0
+  1566  069E  00A0               	movwf	??_motor_full_up
+  1567  069F  0820               	movf	??_motor_full_up,w
+  1568  06A0  07A5               	addwf	motor_full_up@i,f
+  1569  06A1  2E8D               	goto	l1123
+  1570  06A2                     l169:	
+  1571                           
+  1572                           ;main.c: 245: }
+  1573                           ;main.c: 246: RC0 = 0;
+  1574  06A2  1007               	bcf	7,0	;volatile
+  1575  06A3  0008               	return
+  1576  06A4                     __end_of_motor_full_up:	
+  1577                           
+  1578                           	psect	text9
+  1579  0492                     __ptext9:	
+  1580 ;; *************** function _for_entire_bounce *****************
+  1581 ;; Defined at:
+  1582 ;;		line 100 in file "main.c"
+  1583 ;; Parameters:    Size  Location     Type
+  1584 ;;  func            1    wreg     PTR FTN()void 
+  1585 ;;		 -> flash_halfHours(0), 
+  1586 ;; Auto vars:     Size  Location     Type
+  1587 ;;  func            1   13[COMMON] PTR FTN()void 
+  1588 ;;		 -> flash_halfHours(0), 
+  1589 ;; Return value:  Size  Location     Type
+  1590 ;;		None               void
+  1591 ;; Registers used:
+  1592 ;;		wreg, status,2, status,0, pclath, cstack
+  1593 ;; Tracked objects:
+  1594 ;;		On entry : 0/0
+  1595 ;;		On exit  : 0/0
+  1596 ;;		Unchanged: 0/0
+  1597 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  1598 ;;      Params:         0       0       0       0
+  1599 ;;      Locals:         1       0       0       0
+  1600 ;;      Temps:          0       0       0       0
+  1601 ;;      Totals:         1       0       0       0
+  1602 ;;Total ram usage:        1 bytes
+  1603 ;; Hardware stack levels used:    1
+  1604 ;; Hardware stack levels required when called:    2
+  1605 ;; This function calls:
+  1606 ;;		_flash_halfHours
+  1607 ;; This function is called by:
+  1608 ;;		_run_cycle
+  1609 ;; This function uses a non-reentrant model
+  1610 ;;
+  1611                           
+  1612                           
+  1613                           ;psect for function _for_entire_bounce
+  1614  0492                     _for_entire_bounce:	
+  1615                           
+  1616                           ;incstack = 0
+  1617                           ; Regs used in _for_entire_bounce: [wreg+status,2+status,0+pclath+cstack]
+  1618                           ;for_entire_bounce@func stored from wreg
+  1619  0492  00FD               	movwf	for_entire_bounce@func
+  1620                           
+  1621                           ;main.c: 101: TMR0 = 0;
+  1622  0493  1283               	bcf	3,5	;RP0=0, select bank0
+  1623  0494  1303               	bcf	3,6	;RP1=0, select bank0
+  1624  0495  0181               	clrf	1	;volatile
+  1625  0496                     l1061:	
+  1626                           ;main.c: 102: while(TMR0 < 30) {
+  1627                           
+  1628  0496  301E               	movlw	30
+  1629  0497  1283               	bcf	3,5	;RP0=0, select bank0
+  1630  0498  1303               	bcf	3,6	;RP1=0, select bank0
+  1631  0499  0201               	subwf	1,w	;volatile
+  1632  049A  1803               	btfsc	3,0
+  1633  049B  0008               	return
+  1634                           
+  1635                           ;main.c: 103: func();
+  1636  049C  087D               	movf	for_entire_bounce@func,w
+  1637  049D  118A  2700  118A   	fcall	fptable
+  1638  04A0  2C96               	goto	l1061
+  1639  04A1                     __end_of_for_entire_bounce:	
+  1640                           
+  1641                           	psect	text10
+  1642  05C3                     __ptext10:	
+  1643 ;; *************** function _clock_test *****************
+  1644 ;; Defined at:
+  1645 ;;		line 344 in file "main.c"
+  1646 ;; Parameters:    Size  Location     Type
+  1647 ;;		None
+  1648 ;; Auto vars:     Size  Location     Type
+  1649 ;;  i               1    7[BANK0 ] unsigned char 
+  1650 ;;  d               1    6[BANK0 ] unsigned char 
+  1651 ;;  c               1    5[BANK0 ] unsigned char 
+  1652 ;;  b               1    4[BANK0 ] unsigned char 
+  1653 ;;  a               1    3[BANK0 ] unsigned char 
+  1654 ;; Return value:  Size  Location     Type
+  1655 ;;		None               void
+  1656 ;; Registers used:
+  1657 ;;		wreg, status,2, status,0, pclath, cstack
+  1658 ;; Tracked objects:
+  1659 ;;		On entry : 0/0
+  1660 ;;		On exit  : 0/0
+  1661 ;;		Unchanged: 0/0
+  1662 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  1663 ;;      Params:         0       0       0       0
+  1664 ;;      Locals:         0       5       0       0
+  1665 ;;      Temps:          0       3       0       0
+  1666 ;;      Totals:         0       8       0       0
+  1667 ;;Total ram usage:        8 bytes
+  1668 ;; Hardware stack levels used:    1
+  1669 ;; Hardware stack levels required when called:    4
+  1670 ;; This function calls:
+  1671 ;;		_flash
+  1672 ;;		_wait_until_next_halfsecond
+  1673 ;; This function is called by:
+  1674 ;;		_main
+  1675 ;; This function uses a non-reentrant model
+  1676 ;;
+  1677                           
+  1678                           
+  1679                           ;psect for function _clock_test
+  1680  05C3                     _clock_test:	
+  1681                           
+  1682                           ;main.c: 345: char i = 0;
+  1683                           
+  1684                           ;incstack = 0
+  1685                           ; Regs used in _clock_test: [wreg+status,2+status,0+pclath+cstack]
+  1686  05C3  1283               	bcf	3,5	;RP0=0, select bank0
+  1687  05C4  1303               	bcf	3,6	;RP1=0, select bank0
+  1688  05C5  01A7               	clrf	clock_test@i
+  1689  05C6                     l1309:	
+  1690                           ;main.c: 346: char a, b, c, d;
+  1691                           ;main.c: 347: while(i < 16) {
+  1692                           
+  1693  05C6  3010               	movlw	16
+  1694  05C7  0227               	subwf	clock_test@i,w
+  1695  05C8  1803               	btfsc	3,0
+  1696  05C9  0008               	return
+  1697                           
+  1698                           ;main.c: 348: a = (i >> 0) & 1;
+  1699  05CA  0827               	movf	clock_test@i,w
+  1700  05CB  3901               	andlw	1
+  1701  05CC  00A0               	movwf	??_clock_test
+  1702  05CD  0820               	movf	??_clock_test,w
+  1703  05CE  00A3               	movwf	clock_test@a
+  1704                           
+  1705                           ;main.c: 349: b = (i >> 1) & 1;
+  1706  05CF  0827               	movf	clock_test@i,w
+  1707  05D0  00A0               	movwf	??_clock_test
+  1708  05D1  1003               	clrc
+  1709  05D2  0C20               	rrf	??_clock_test,w
+  1710  05D3  3901               	andlw	1
+  1711  05D4  00A1               	movwf	??_clock_test+1
+  1712  05D5  0821               	movf	??_clock_test+1,w
+  1713  05D6  00A4               	movwf	clock_test@b
+  1714                           
+  1715                           ;main.c: 350: c = (i >> 2) & 1;
+  1716  05D7  0827               	movf	clock_test@i,w
+  1717  05D8  00A0               	movwf	??_clock_test
+  1718  05D9  3002               	movlw	2
+  1719  05DA                     u1275:	
+  1720  05DA  1003               	clrc
+  1721  05DB  0CA0               	rrf	??_clock_test,f
+  1722  05DC  3EFF               	addlw	-1
+  1723  05DD  1D03               	skipz
+  1724  05DE  2DDA               	goto	u1275
+  1725  05DF  0820               	movf	??_clock_test,w
+  1726  05E0  3901               	andlw	1
+  1727  05E1  00A1               	movwf	??_clock_test+1
+  1728  05E2  0821               	movf	??_clock_test+1,w
+  1729  05E3  00A5               	movwf	clock_test@c
+  1730                           
+  1731                           ;main.c: 351: d = (i >> 3) & 1;
+  1732  05E4  0827               	movf	clock_test@i,w
+  1733  05E5  00A0               	movwf	??_clock_test
+  1734  05E6  3003               	movlw	3
+  1735  05E7                     u1285:	
+  1736  05E7  1003               	clrc
+  1737  05E8  0CA0               	rrf	??_clock_test,f
+  1738  05E9  3EFF               	addlw	-1
+  1739  05EA  1D03               	skipz
+  1740  05EB  2DE7               	goto	u1285
+  1741  05EC  0820               	movf	??_clock_test,w
+  1742  05ED  3901               	andlw	1
+  1743  05EE  00A1               	movwf	??_clock_test+1
+  1744  05EF  0821               	movf	??_clock_test+1,w
+  1745  05F0  00A6               	movwf	clock_test@d
+  1746                           
+  1747                           ;main.c: 352: flash(a, b, c, d, 0);
+  1748  05F1  0824               	movf	clock_test@b,w
+  1749  05F2  00A0               	movwf	??_clock_test
+  1750  05F3  0820               	movf	??_clock_test,w
+  1751  05F4  00F0               	movwf	flash@t2
+  1752  05F5  0825               	movf	clock_test@c,w
+  1753  05F6  00A1               	movwf	??_clock_test+1
+  1754  05F7  0821               	movf	??_clock_test+1,w
+  1755  05F8  00F1               	movwf	flash@t3
+  1756  05F9  0826               	movf	clock_test@d,w
+  1757  05FA  00A2               	movwf	??_clock_test+2
+  1758  05FB  0822               	movf	??_clock_test+2,w
+  1759  05FC  00F2               	movwf	flash@t4
+  1760  05FD  01F3               	clrf	flash@t5
+  1761  05FE  0823               	movf	clock_test@a,w
+  1762  05FF  118A  253C  118A   	fcall	_flash
+  1763                           
+  1764                           ;main.c: 353: wait_until_next_halfsecond();
+  1765  0602  118A  2474  118A   	fcall	_wait_until_next_halfsecond
+  1766                           
+  1767                           ;main.c: 354: i++;
+  1768  0605  3001               	movlw	1
+  1769  0606  1283               	bcf	3,5	;RP0=0, select bank0
+  1770  0607  1303               	bcf	3,6	;RP1=0, select bank0
+  1771  0608  00A0               	movwf	??_clock_test
+  1772  0609  0820               	movf	??_clock_test,w
+  1773  060A  07A7               	addwf	clock_test@i,f
+  1774  060B  2DC6               	goto	l1309
+  1775  060C                     __end_of_clock_test:	
+  1776                           
+  1777                           	psect	text11
+  1778  0474                     __ptext11:	
+  1779 ;; *************** function _wait_until_next_halfsecond *****************
+  1780 ;; Defined at:
+  1781 ;;		line 111 in file "main.c"
+  1782 ;; Parameters:    Size  Location     Type
+  1783 ;;		None
+  1784 ;; Auto vars:     Size  Location     Type
+  1785 ;;		None
+  1786 ;; Return value:  Size  Location     Type
+  1787 ;;		None               void
+  1788 ;; Registers used:
+  1789 ;;		wreg, status,2, status,0, pclath, cstack
+  1790 ;; Tracked objects:
+  1791 ;;		On entry : 0/0
+  1792 ;;		On exit  : 0/0
+  1793 ;;		Unchanged: 0/0
+  1794 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  1795 ;;      Params:         0       0       0       0
+  1796 ;;      Locals:         0       0       0       0
+  1797 ;;      Temps:          0       0       0       0
+  1798 ;;      Totals:         0       0       0       0
+  1799 ;;Total ram usage:        0 bytes
+  1800 ;; Hardware stack levels used:    1
+  1801 ;; Hardware stack levels required when called:    3
+  1802 ;; This function calls:
+  1803 ;;		_until_next_halfsecond
+  1804 ;; This function is called by:
+  1805 ;;		_motor_full_up
+  1806 ;;		_clock_test
+  1807 ;; This function uses a non-reentrant model
+  1808 ;;
+  1809                           
+  1810                           
+  1811                           ;psect for function _wait_until_next_halfsecond
+  1812  0474                     _wait_until_next_halfsecond:	
+  1813                           
+  1814                           ;main.c: 112: until_next_halfsecond(nop);
+  1815                           
+  1816                           ;incstack = 0
+  1817                           ; Regs used in _wait_until_next_halfsecond: [wreg+status,2+status,0+pclath+cstack]
+  1818  0474  3001               	movlw	(low (fp__nop-fpbase))& (0+255)
+  1819  0475  118A  2484         	fcall	_until_next_halfsecond
+  1820  0477  0008               	return
+  1821  0478                     __end_of_wait_until_next_halfsecond:	
+  1822                           
+  1823                           	psect	text12
+  1824  0484                     __ptext12:	
+  1825 ;; *************** function _until_next_halfsecond *****************
+  1826 ;; Defined at:
+  1827 ;;		line 88 in file "main.c"
+  1828 ;; Parameters:    Size  Location     Type
+  1829 ;;  func            1    wreg     PTR FTN()void 
+  1830 ;;		 -> flash_dip_and_buttons(0), flash_halfHours(0), flash_all(0), nop(0), 
+  1831 ;; Auto vars:     Size  Location     Type
+  1832 ;;  func            1   13[COMMON] PTR FTN()void 
+  1833 ;;		 -> flash_dip_and_buttons(0), flash_halfHours(0), flash_all(0), nop(0), 
+  1834 ;; Return value:  Size  Location     Type
+  1835 ;;		None               void
+  1836 ;; Registers used:
+  1837 ;;		wreg, status,2, status,0, pclath, cstack
+  1838 ;; Tracked objects:
+  1839 ;;		On entry : 0/0
+  1840 ;;		On exit  : 0/0
+  1841 ;;		Unchanged: 0/0
+  1842 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  1843 ;;      Params:         0       0       0       0
+  1844 ;;      Locals:         1       0       0       0
+  1845 ;;      Temps:          0       0       0       0
+  1846 ;;      Totals:         1       0       0       0
+  1847 ;;Total ram usage:        1 bytes
+  1848 ;; Hardware stack levels used:    1
+  1849 ;; Hardware stack levels required when called:    2
+  1850 ;; This function calls:
+  1851 ;;		_flash_all
+  1852 ;;		_flash_dip_and_buttons
+  1853 ;;		_flash_halfHours
+  1854 ;;		_nop
+  1855 ;; This function is called by:
+  1856 ;;		_for_entire_halfsecond
+  1857 ;;		_wait_until_next_halfsecond
+  1858 ;; This function uses a non-reentrant model
+  1859 ;;
+  1860                           
+  1861                           
+  1862                           ;psect for function _until_next_halfsecond
+  1863  0484                     _until_next_halfsecond:	
+  1864                           
+  1865                           ;incstack = 0
+  1866                           ; Regs used in _until_next_halfsecond: [wreg+status,2+status,0+pclath+cstack]
+  1867                           ;until_next_halfsecond@func stored from wreg
+  1868  0484  00FD               	movwf	until_next_halfsecond@func
+  1869  0485                     l1045:	
+  1870                           ;main.c: 89: while(TMR0 < 210) {
+  1871                           
+  1872  0485  30D2               	movlw	210
+  1873  0486  1283               	bcf	3,5	;RP0=0, select bank0
+  1874  0487  1303               	bcf	3,6	;RP1=0, select bank0
+  1875  0488  0201               	subwf	1,w	;volatile
+  1876  0489  1803               	btfsc	3,0
+  1877  048A  2C90               	goto	l1047
+  1878                           
+  1879                           ;main.c: 90: func();
+  1880  048B  087D               	movf	until_next_halfsecond@func,w
+  1881  048C  118A  2700  118A   	fcall	fptable
+  1882  048F  2C85               	goto	l1045
+  1883  0490                     l1047:	
+  1884                           
+  1885                           ;main.c: 91: }
+  1886                           ;main.c: 92: TMR0 = 0;
+  1887  0490  0181               	clrf	1	;volatile
+  1888  0491  0008               	return
+  1889  0492                     __end_of_until_next_halfsecond:	
+  1890                           
+  1891                           	psect	text13
+  1892  060C                     __ptext13:	
+  1893 ;; *************** function _flash_dip_and_buttons *****************
+  1894 ;; Defined at:
+  1895 ;;		line 145 in file "main.c"
+  1896 ;; Parameters:    Size  Location     Type
+  1897 ;;		None
+  1898 ;; Auto vars:     Size  Location     Type
+  1899 ;;		None
+  1900 ;; Return value:  Size  Location     Type
+  1901 ;;		None               void
+  1902 ;; Registers used:
+  1903 ;;		wreg, status,2, status,0, pclath, cstack
+  1904 ;; Tracked objects:
+  1905 ;;		On entry : 0/0
+  1906 ;;		On exit  : 0/0
+  1907 ;;		Unchanged: 0/0
+  1908 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  1909 ;;      Params:         0       0       0       0
+  1910 ;;      Locals:         0       0       0       0
+  1911 ;;      Temps:          0       0       0       0
+  1912 ;;      Totals:         0       0       0       0
+  1913 ;;Total ram usage:        0 bytes
+  1914 ;; Hardware stack levels used:    1
+  1915 ;; Hardware stack levels required when called:    1
+  1916 ;; This function calls:
+  1917 ;;		_flash
+  1918 ;; This function is called by:
+  1919 ;;		_wakeup
+  1920 ;;		_main
+  1921 ;;		_until_next_halfsecond
+  1922 ;; This function uses a non-reentrant model
+  1923 ;;
+  1924                           
+  1925                           
+  1926                           ;psect for function _flash_dip_and_buttons
+  1927  060C                     _flash_dip_and_buttons:	
+  1928                           
+  1929                           ;main.c: 146: if((!(RA0)) || (!(RA1)) || (!(RA4)) || (!(RA5))) {
+  1930                           
+  1931                           ;incstack = 0
+  1932                           ; Regs used in _flash_dip_and_buttons: [wreg+status,2+status,0+pclath+cstack]
+  1933  060C  1283               	bcf	3,5	;RP0=0, select bank0
+  1934  060D  1303               	bcf	3,6	;RP1=0, select bank0
+  1935  060E  1805               	btfsc	5,0	;volatile
+  1936  060F  1C85               	btfss	5,1	;volatile
+  1937  0610  2E15               	goto	l1037
+  1938  0611  1E05               	btfss	5,4	;volatile
+  1939  0612  2E15               	goto	l1037
+  1940  0613  1A85               	btfsc	5,5	;volatile
+  1941  0614  2E35               	goto	l1039
+  1942  0615                     l1037:	
+  1943                           
+  1944                           ;main.c: 147: flash((!(RA0)), (!(RA1)), (!(RA4)), (!(RA5)), 1);
+  1945  0615  1003               	clrc
+  1946  0616  1C85               	btfss	5,1	;volatile
+  1947  0617  1403               	setc
+  1948  0618  3000               	movlw	0
+  1949  0619  1803               	btfsc	3,0
+  1950  061A  3001               	movlw	1
+  1951  061B  00F0               	movwf	flash@t2
+  1952  061C  1003               	clrc
+  1953  061D  1E05               	btfss	5,4	;volatile
+  1954  061E  1403               	setc
+  1955  061F  3000               	movlw	0
+  1956  0620  1803               	btfsc	3,0
+  1957  0621  3001               	movlw	1
+  1958  0622  00F1               	movwf	flash@t3
+  1959  0623  1003               	clrc
+  1960  0624  1E85               	btfss	5,5	;volatile
+  1961  0625  1403               	setc
+  1962  0626  3000               	movlw	0
+  1963  0627  1803               	btfsc	3,0
+  1964  0628  3001               	movlw	1
+  1965  0629  00F2               	movwf	flash@t4
+  1966  062A  01F3               	clrf	flash@t5
+  1967  062B  0AF3               	incf	flash@t5,f
+  1968  062C  1003               	clrc
+  1969  062D  1C05               	btfss	5,0	;volatile
+  1970  062E  1403               	setc
+  1971  062F  3000               	movlw	0
+  1972  0630  1803               	skipnc
+  1973  0631  3001               	movlw	1
+  1974  0632  118A  253C         	fcall	_flash
+  1975                           
+  1976                           ;main.c: 148: } else {
+  1977  0634  0008               	return
+  1978  0635                     l1039:	
+  1979                           
+  1980                           ;main.c: 149: flash((!RB4), (!RB5), (!RB6), (!RB7), 0);
+  1981  0635  1003               	clrc
+  1982  0636  1283               	bcf	3,5	;RP0=0, select bank0
+  1983  0637  1303               	bcf	3,6	;RP1=0, select bank0
+  1984  0638  1E86               	btfss	6,5	;volatile
+  1985  0639  1403               	setc
+  1986  063A  3000               	movlw	0
+  1987  063B  1803               	btfsc	3,0
+  1988  063C  3001               	movlw	1
+  1989  063D  00F0               	movwf	flash@t2
+  1990  063E  1003               	clrc
+  1991  063F  1F06               	btfss	6,6	;volatile
+  1992  0640  1403               	setc
+  1993  0641  3000               	movlw	0
+  1994  0642  1803               	btfsc	3,0
+  1995  0643  3001               	movlw	1
+  1996  0644  00F1               	movwf	flash@t3
+  1997  0645  1003               	clrc
+  1998  0646  1F86               	btfss	6,7	;volatile
+  1999  0647  1403               	setc
+  2000  0648  3000               	movlw	0
+  2001  0649  1803               	btfsc	3,0
+  2002  064A  3001               	movlw	1
+  2003  064B  00F2               	movwf	flash@t4
+  2004  064C  01F3               	clrf	flash@t5
+  2005  064D  1003               	clrc
+  2006  064E  1E06               	btfss	6,4	;volatile
+  2007  064F  1403               	setc
+  2008  0650  3000               	movlw	0
+  2009  0651  1803               	skipnc
+  2010  0652  3001               	movlw	1
+  2011  0653  118A  253C         	fcall	_flash
+  2012  0655  0008               	return
+  2013  0656                     __end_of_flash_dip_and_buttons:	
+  2014                           
+  2015                           	psect	text14
+  2016  04D0                     __ptext14:	
+  2017 ;; *************** function _flash_halfHours *****************
+  2018 ;; Defined at:
+  2019 ;;		line 131 in file "main.c"
+  2020 ;; Parameters:    Size  Location     Type
+  2021 ;;		None
+  2022 ;; Auto vars:     Size  Location     Type
+  2023 ;;		None
+  2024 ;; Return value:  Size  Location     Type
+  2025 ;;		None               void
+  2026 ;; Registers used:
+  2027 ;;		wreg, status,2, status,0, pclath, cstack
+  2028 ;; Tracked objects:
+  2029 ;;		On entry : 0/0
+  2030 ;;		On exit  : 0/0
+  2031 ;;		Unchanged: 0/0
+  2032 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  2033 ;;      Params:         0       0       0       0
+  2034 ;;      Locals:         0       0       0       0
+  2035 ;;      Temps:          8       0       0       0
+  2036 ;;      Totals:         8       0       0       0
+  2037 ;;Total ram usage:        8 bytes
+  2038 ;; Hardware stack levels used:    1
+  2039 ;; Hardware stack levels required when called:    1
+  2040 ;; This function calls:
+  2041 ;;		_flash
+  2042 ;; This function is called by:
+  2043 ;;		_run_cycle
+  2044 ;;		_display_halfHours_for_halfsecond
+  2045 ;;		_until_next_halfsecond
+  2046 ;;		_for_entire_bounce
+  2047 ;; This function uses a non-reentrant model
+  2048 ;;
+  2049                           
+  2050                           
+  2051                           ;psect for function _flash_halfHours
+  2052  04D0                     _flash_halfHours:	
+  2053                           
+  2054                           ;main.c: 132: flash(
+  2055                           ;main.c: 133: ((halfHours >> 0) & 1),
+  2056                           ;main.c: 134: ((halfHours >> 1) & 1),
+  2057                           ;main.c: 135: ((halfHours >> 2) & 1),
+  2058                           ;main.c: 136: ((halfHours >> 3) & 1),
+  2059                           ;main.c: 137: ((halfHours >> 4) & 1));
+  2060                           
+  2061                           ;incstack = 0
+  2062                           ; Regs used in _flash_halfHours: [wreg+status,2+status,0+pclath+cstack]
+  2063  04D0  1283               	bcf	3,5	;RP0=0, select bank0
+  2064  04D1  1303               	bcf	3,6	;RP1=0, select bank0
+  2065  04D2  0837               	movf	_halfHours,w
+  2066  04D3  00F5               	movwf	??_flash_halfHours
+  2067  04D4  1003               	clrc
+  2068  04D5  0C75               	rrf	??_flash_halfHours,w
+  2069  04D6  3901               	andlw	1
+  2070  04D7  00F6               	movwf	??_flash_halfHours+1
+  2071  04D8  0876               	movf	??_flash_halfHours+1,w
+  2072  04D9  00F0               	movwf	flash@t2
+  2073  04DA  0837               	movf	_halfHours,w
+  2074  04DB  00F7               	movwf	??_flash_halfHours+2
+  2075  04DC  3002               	movlw	2
+  2076  04DD                     u805:	
+  2077  04DD  1003               	clrc
+  2078  04DE  0CF7               	rrf	??_flash_halfHours+2,f
+  2079  04DF  3EFF               	addlw	-1
+  2080  04E0  1D03               	skipz
+  2081  04E1  2CDD               	goto	u805
+  2082  04E2  0877               	movf	??_flash_halfHours+2,w
+  2083  04E3  3901               	andlw	1
+  2084  04E4  00F8               	movwf	??_flash_halfHours+3
+  2085  04E5  0878               	movf	??_flash_halfHours+3,w
+  2086  04E6  00F1               	movwf	flash@t3
+  2087  04E7  0837               	movf	_halfHours,w
+  2088  04E8  00F9               	movwf	??_flash_halfHours+4
+  2089  04E9  3003               	movlw	3
+  2090  04EA                     u815:	
+  2091  04EA  1003               	clrc
+  2092  04EB  0CF9               	rrf	??_flash_halfHours+4,f
+  2093  04EC  3EFF               	addlw	-1
+  2094  04ED  1D03               	skipz
+  2095  04EE  2CEA               	goto	u815
+  2096  04EF  0879               	movf	??_flash_halfHours+4,w
+  2097  04F0  3901               	andlw	1
+  2098  04F1  00FA               	movwf	??_flash_halfHours+5
+  2099  04F2  087A               	movf	??_flash_halfHours+5,w
+  2100  04F3  00F2               	movwf	flash@t4
+  2101  04F4  0837               	movf	_halfHours,w
+  2102  04F5  00FB               	movwf	??_flash_halfHours+6
+  2103  04F6  3004               	movlw	4
+  2104  04F7                     u825:	
+  2105  04F7  1003               	clrc
+  2106  04F8  0CFB               	rrf	??_flash_halfHours+6,f
+  2107  04F9  3EFF               	addlw	-1
+  2108  04FA  1D03               	skipz
+  2109  04FB  2CF7               	goto	u825
+  2110  04FC  087B               	movf	??_flash_halfHours+6,w
+  2111  04FD  3901               	andlw	1
+  2112  04FE  00FC               	movwf	??_flash_halfHours+7
+  2113  04FF  087C               	movf	??_flash_halfHours+7,w
+  2114  0500  00F3               	movwf	flash@t5
+  2115  0501  0837               	movf	_halfHours,w
+  2116  0502  3901               	andlw	1
+  2117  0503  118A  253C         	fcall	_flash
+  2118  0505  0008               	return
+  2119  0506                     __end_of_flash_halfHours:	
+  2120                           
+  2121                           	psect	text15
+  2122  07EF                     __ptext15:	
+  2123 ;; *************** function _flash_all *****************
+  2124 ;; Defined at:
+  2125 ;;		line 125 in file "main.c"
+  2126 ;; Parameters:    Size  Location     Type
+  2127 ;;		None
+  2128 ;; Auto vars:     Size  Location     Type
+  2129 ;;		None
+  2130 ;; Return value:  Size  Location     Type
+  2131 ;;		None               void
+  2132 ;; Registers used:
+  2133 ;;		wreg, status,2, status,0, pclath, cstack
+  2134 ;; Tracked objects:
+  2135 ;;		On entry : 0/0
+  2136 ;;		On exit  : 0/0
+  2137 ;;		Unchanged: 0/0
+  2138 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  2139 ;;      Params:         0       0       0       0
+  2140 ;;      Locals:         0       0       0       0
+  2141 ;;      Temps:          0       0       0       0
+  2142 ;;      Totals:         0       0       0       0
+  2143 ;;Total ram usage:        0 bytes
+  2144 ;; Hardware stack levels used:    1
+  2145 ;; Hardware stack levels required when called:    1
+  2146 ;; This function calls:
+  2147 ;;		_flash
+  2148 ;; This function is called by:
+  2149 ;;		_run_cycle
+  2150 ;;		_until_next_halfsecond
+  2151 ;; This function uses a non-reentrant model
+  2152 ;;
+  2153                           
+  2154                           
+  2155                           ;psect for function _flash_all
+  2156  07EF                     _flash_all:	
+  2157                           
+  2158                           ;main.c: 126: flash(1, 1, 1, 1, 1);
+  2159                           
+  2160                           ;incstack = 0
+  2161                           ; Regs used in _flash_all: [wreg+status,2+status,0+pclath+cstack]
+  2162  07EF  01F0               	clrf	flash@t2
+  2163  07F0  0AF0               	incf	flash@t2,f
+  2164  07F1  01F1               	clrf	flash@t3
+  2165  07F2  0AF1               	incf	flash@t3,f
+  2166  07F3  01F2               	clrf	flash@t4
+  2167  07F4  0AF2               	incf	flash@t4,f
+  2168  07F5  01F3               	clrf	flash@t5
+  2169  07F6  0AF3               	incf	flash@t5,f
+  2170  07F7  3001               	movlw	1
+  2171  07F8  118A  253C         	fcall	_flash
+  2172  07FA  0008               	return
+  2173  07FB                     __end_of_flash_all:	
+  2174                           
+  2175                           	psect	text16
+  2176  07FB                     __ptext16:	
+  2177 ;; *************** function _nop *****************
+  2178 ;; Defined at:
+  2179 ;;		line 86 in file "main.c"
+  2180 ;; Parameters:    Size  Location     Type
+  2181 ;;		None
+  2182 ;; Auto vars:     Size  Location     Type
+  2183 ;;		None
+  2184 ;; Return value:  Size  Location     Type
+  2185 ;;		None               void
+  2186 ;; Registers used:
+  2187 ;;		None
+  2188 ;; Tracked objects:
+  2189 ;;		On entry : 0/0
+  2190 ;;		On exit  : 0/0
+  2191 ;;		Unchanged: 0/0
+  2192 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  2193 ;;      Params:         0       0       0       0
+  2194 ;;      Locals:         0       0       0       0
+  2195 ;;      Temps:          0       0       0       0
+  2196 ;;      Totals:         0       0       0       0
+  2197 ;;Total ram usage:        0 bytes
+  2198 ;; Hardware stack levels used:    1
+  2199 ;; This function calls:
+  2200 ;;		Nothing
+  2201 ;; This function is called by:
+  2202 ;;		_wait_entire_halfsecond
+  2203 ;;		_wait_until_next_halfsecond
+  2204 ;;		_until_next_halfsecond
+  2205 ;; This function uses a non-reentrant model
+  2206 ;;
+  2207                           
+  2208                           
+  2209                           ;psect for function _nop
+  2210  07FB                     _nop:	
+  2211                           
+  2212                           ;incstack = 0
+  2213                           ; Regs used in _nop: []
+  2214  07FB  0008               	return
+  2215  07FC                     __end_of_nop:	
+  2216                           
+  2217                           	psect	text17
+  2218  053C                     __ptext17:	
+  2219 ;; *************** function _flash *****************
+  2220 ;; Defined at:
+  2221 ;;		line 116 in file "main.c"
+  2222 ;; Parameters:    Size  Location     Type
+  2223 ;;  t1              1    wreg     unsigned char 
+  2224 ;;  t2              1    0[COMMON] unsigned char 
+  2225 ;;  t3              1    1[COMMON] unsigned char 
+  2226 ;;  t4              1    2[COMMON] unsigned char 
+  2227 ;;  t5              1    3[COMMON] unsigned char 
+  2228 ;; Auto vars:     Size  Location     Type
+  2229 ;;  t1              1    4[COMMON] unsigned char 
+  2230 ;; Return value:  Size  Location     Type
+  2231 ;;		None               void
+  2232 ;; Registers used:
+  2233 ;;		wreg
+  2234 ;; Tracked objects:
+  2235 ;;		On entry : 0/0
+  2236 ;;		On exit  : 0/0
+  2237 ;;		Unchanged: 0/0
+  2238 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  2239 ;;      Params:         4       0       0       0
+  2240 ;;      Locals:         1       0       0       0
+  2241 ;;      Temps:          0       0       0       0
+  2242 ;;      Totals:         5       0       0       0
+  2243 ;;Total ram usage:        5 bytes
+  2244 ;; Hardware stack levels used:    1
+  2245 ;; This function calls:
+  2246 ;;		Nothing
+  2247 ;; This function is called by:
+  2248 ;;		_flash_all
+  2249 ;;		_flash_halfHours
+  2250 ;;		_flash_dip_and_buttons
+  2251 ;;		_clock_test
+  2252 ;; This function uses a non-reentrant model
+  2253 ;;
+  2254                           
+  2255                           
+  2256                           ;psect for function _flash
+  2257  053C                     _flash:	
+  2258                           
+  2259                           ;incstack = 0
+  2260                           ; Regs used in _flash: [wreg]
+  2261                           ;flash@t1 stored from wreg
+  2262  053C  00F4               	movwf	flash@t1
+  2263                           
+  2264                           ;main.c: 117: { RC7 = t1; __nop(); RC7 = 0; };
+  2265  053D  1C74               	btfss	flash@t1,0
+  2266  053E  2D43               	goto	u700
+  2267  053F  1283               	bcf	3,5	;RP0=0, select bank0
+  2268  0540  1303               	bcf	3,6	;RP1=0, select bank0
+  2269  0541  1787               	bsf	7,7	;volatile
+  2270  0542  2D46               	goto	u714
+  2271  0543                     u700:	
+  2272  0543  1283               	bcf	3,5	;RP0=0, select bank0
+  2273  0544  1303               	bcf	3,6	;RP1=0, select bank0
+  2274  0545  1387               	bcf	7,7	;volatile
+  2275  0546                     u714:	
+  2276  0546  0000               	nop
+  2277  0547  1283               	bcf	3,5	;RP0=0, select bank0
+  2278  0548  1303               	bcf	3,6	;RP1=0, select bank0
+  2279  0549  1387               	bcf	7,7	;volatile
+  2280                           
+  2281                           ;main.c: 118: { RC6 = t2; __nop(); RC6 = 0; };
+  2282  054A  1C70               	btfss	flash@t2,0
+  2283  054B  2D50               	goto	u720
+  2284  054C  1283               	bcf	3,5	;RP0=0, select bank0
+  2285  054D  1303               	bcf	3,6	;RP1=0, select bank0
+  2286  054E  1707               	bsf	7,6	;volatile
+  2287  054F  2D53               	goto	u734
+  2288  0550                     u720:	
+  2289  0550  1283               	bcf	3,5	;RP0=0, select bank0
+  2290  0551  1303               	bcf	3,6	;RP1=0, select bank0
+  2291  0552  1307               	bcf	7,6	;volatile
+  2292  0553                     u734:	
+  2293  0553  0000               	nop
+  2294  0554  1283               	bcf	3,5	;RP0=0, select bank0
+  2295  0555  1303               	bcf	3,6	;RP1=0, select bank0
+  2296  0556  1307               	bcf	7,6	;volatile
+  2297                           
+  2298                           ;main.c: 119: { RC5 = t3; __nop(); RC5 = 0; };
+  2299  0557  1C71               	btfss	flash@t3,0
+  2300  0558  2D5D               	goto	u740
+  2301  0559  1283               	bcf	3,5	;RP0=0, select bank0
+  2302  055A  1303               	bcf	3,6	;RP1=0, select bank0
+  2303  055B  1687               	bsf	7,5	;volatile
+  2304  055C  2D60               	goto	u754
+  2305  055D                     u740:	
+  2306  055D  1283               	bcf	3,5	;RP0=0, select bank0
+  2307  055E  1303               	bcf	3,6	;RP1=0, select bank0
+  2308  055F  1287               	bcf	7,5	;volatile
+  2309  0560                     u754:	
+  2310  0560  0000               	nop
+  2311  0561  1283               	bcf	3,5	;RP0=0, select bank0
+  2312  0562  1303               	bcf	3,6	;RP1=0, select bank0
+  2313  0563  1287               	bcf	7,5	;volatile
+  2314                           
+  2315                           ;main.c: 120: { RC4 = t4; __nop(); RC4 = 0; };
+  2316  0564  1C72               	btfss	flash@t4,0
+  2317  0565  2D6A               	goto	u760
+  2318  0566  1283               	bcf	3,5	;RP0=0, select bank0
+  2319  0567  1303               	bcf	3,6	;RP1=0, select bank0
+  2320  0568  1607               	bsf	7,4	;volatile
+  2321  0569  2D6D               	goto	u774
+  2322  056A                     u760:	
+  2323  056A  1283               	bcf	3,5	;RP0=0, select bank0
+  2324  056B  1303               	bcf	3,6	;RP1=0, select bank0
+  2325  056C  1207               	bcf	7,4	;volatile
+  2326  056D                     u774:	
+  2327  056D  0000               	nop
+  2328  056E  1283               	bcf	3,5	;RP0=0, select bank0
+  2329  056F  1303               	bcf	3,6	;RP1=0, select bank0
+  2330  0570  1207               	bcf	7,4	;volatile
+  2331                           
+  2332                           ;main.c: 121: { RC3 = t5; __nop(); RC3 = 0; };
+  2333  0571  1C73               	btfss	flash@t5,0
+  2334  0572  2D77               	goto	u780
+  2335  0573  1283               	bcf	3,5	;RP0=0, select bank0
+  2336  0574  1303               	bcf	3,6	;RP1=0, select bank0
+  2337  0575  1587               	bsf	7,3	;volatile
+  2338  0576  2D7A               	goto	u794
+  2339  0577                     u780:	
+  2340  0577  1283               	bcf	3,5	;RP0=0, select bank0
+  2341  0578  1303               	bcf	3,6	;RP1=0, select bank0
+  2342  0579  1187               	bcf	7,3	;volatile
+  2343  057A                     u794:	
+  2344  057A  0000               	nop
+  2345  057B  1283               	bcf	3,5	;RP0=0, select bank0
+  2346  057C  1303               	bcf	3,6	;RP1=0, select bank0
+  2347  057D  1187               	bcf	7,3	;volatile
+  2348  057E  0008               	return
+  2349  057F                     __end_of_flash:	
+  2350  000C                     
+  2351                           	psect	functab
+  2352  0700                     __pfunctab:	
+  2353  0700                     __fptable:	
+  2354  0700                     fptable:	
+  2355  0700  00FF               	movwf	(btemp+1)& (0+127)
+  2356  0701  3007               	movlw	high fptable
+  2357  0702  008A               	movwf	10
+  2358  0703  087F               	movf	(btemp+1)& (0+127),w
+  2359  0704  0782               	addwf	2,f
+  2360  0705                     fpbase:	
+  2361  0705  2F05               	goto	fpbase	; Call via a null pointer and you will get stuck here.
+  2362  0706                     fp__nop:	
+  2363  0706  118A  2FFB         	ljmp	_nop
+  2364  0708                     fp__flash_all:	
+  2365  0708  118A  2FEF         	ljmp	_flash_all
+  2366  070A                     fp__flash_halfHours:	
+  2367  070A                     entry__flash_halfHours:	
+  2368  070A  118A  2CD0         	ljmp	_flash_halfHours
+  2369  070C                     fp__flash_dip_and_buttons:	
+  2370  070C  118A  2E0C         	ljmp	_flash_dip_and_buttons
+  2371  070E                     __end_of__fptable:	
+  2372  007E                     btemp	set	126	;btemp
+  2373  007E                     wtemp	set	126
+  2374  007E                     wtemp0	set	126
+  2375  0080                     wtemp1	set	128
+  2376  0082                     wtemp2	set	130
+  2377  0084                     wtemp3	set	132
+  2378  0086                     wtemp4	set	134
+  2379  0088                     wtemp5	set	136
+  2380  007F                     wtemp6	set	127
+  2381  007E                     ttemp	set	126
+  2382  007E                     ttemp0	set	126
+  2383  0081                     ttemp1	set	129
+  2384  0084                     ttemp2	set	132
+  2385  0087                     ttemp3	set	135
+  2386  007F                     ttemp4	set	127
+  2387  007E                     ltemp	set	126
+  2388  007E                     ltemp0	set	126
+  2389  0082                     ltemp1	set	130
+  2390  0086                     ltemp2	set	134
+  2391  0080                     ltemp3	set	128
+
+
+Data Sizes:
+    Strings     0
+    Constant    0
+    Data        0
+    BSS         1
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMMON           14     14      14
+    BANK0            80     23      24
+    BANK1            80      0       0
+    BANK2            80      0       0
+
+Pointer List with Targets:
+
+    for_entire_bounce@func	PTR FTN()void  size(1) Largest target is 0
+		 -> flash_halfHours(), 
+
+    for_entire_halfsecond@func	PTR FTN()void  size(1) Largest target is 0
+		 -> flash_dip_and_buttons(), flash_halfHours(), flash_all(), nop(), 
+
+    until_next_halfsecond@func	PTR FTN()void  size(1) Largest target is 0
+		 -> flash_dip_and_buttons(), flash_halfHours(), flash_all(), nop(), 
+
+
+Critical Paths under _main in COMMON
+
+    _run_cycle->_for_entire_bounce
+    _for_entire_halfsecond->_until_next_halfsecond
+    _for_entire_bounce->_flash_halfHours
+    _wait_until_next_halfsecond->_until_next_halfsecond
+    _until_next_halfsecond->_flash_halfHours
+    _flash_halfHours->_flash
+    _flash_dip_and_buttons->_flash
+    _flash_all->_flash
+
+Critical Paths under _main in BANK0
+
+    _main->_run_cycle
+    _wakeup->_diagnose_lights
+    _run_cycle->_motor_full_up
+    _wait_entire_halfsecond->_for_entire_halfsecond
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                10     6      4   32591
+                                             13 BANK0     10     6      4
+                         _clock_test
+              _for_entire_halfsecond
+                          _run_cycle
+                              _setup
+                             _wakeup
+ ---------------------------------------------------------------------------------
+ (1) _wakeup                                               2     2      0   10754
+                                              3 BANK0      2     2      0
+                   _diagnose_buttons
+                    _diagnose_lights
+              _for_entire_halfsecond
+ ---------------------------------------------------------------------------------
+ (2) _diagnose_lights                                      2     2      0    3600
+                                              1 BANK0      2     2      0
+             _wait_entire_halfsecond
+ ---------------------------------------------------------------------------------
+ (2) _diagnose_buttons                                     0     0      0    3554
+             _wait_entire_halfsecond
+ ---------------------------------------------------------------------------------
+ (1) _setup                                                0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _run_cycle                                            7     7      0   13286
+                                              6 BANK0      7     7      0
+                    _flash_halfHours
+                  _for_entire_bounce
+              _for_entire_halfsecond
+                      _motor_full_up
+             _wait_entire_halfsecond
+ ---------------------------------------------------------------------------------
+ (3) _wait_entire_halfsecond                               0     0      0    3554
+              _for_entire_halfsecond
+ ---------------------------------------------------------------------------------
+ (2) _for_entire_halfsecond                                1     1      0    3554
+                                              0 BANK0      1     1      0
+              _until_next_halfsecond
+ ---------------------------------------------------------------------------------
+ (2) _motor_full_up                                        6     6      0    3579
+                                              0 BANK0      6     6      0
+         _wait_until_next_halfsecond
+ ---------------------------------------------------------------------------------
+ (2) _for_entire_bounce                                    1     1      0    1192
+                                             13 COMMON     1     1      0
+                    _flash_halfHours *
+ ---------------------------------------------------------------------------------
+ (1) _clock_test                                           8     8      0    4906
+                                              0 BANK0      8     8      0
+                              _flash
+         _wait_until_next_halfsecond
+ ---------------------------------------------------------------------------------
+ (3) _wait_until_next_halfsecond                           0     0      0    3532
+              _until_next_halfsecond
+ ---------------------------------------------------------------------------------
+ (3) _until_next_halfsecond                                1     1      0    3532
+                                             13 COMMON     1     1      0
+                          _flash_all *
+              _flash_dip_and_buttons *
+                    _flash_halfHours *
+                                _nop *
+ ---------------------------------------------------------------------------------
+ (4) _nop                                                  0     0      0       0
+ ---------------------------------------------------------------------------------
+ (4) _flash_halfHours                                      8     8      0    1170
+                                              5 COMMON     8     8      0
+                              _flash
+ ---------------------------------------------------------------------------------
+ (4) _flash_dip_and_buttons                                0     0      0    1170
+                              _flash
+ ---------------------------------------------------------------------------------
+ (4) _flash_all                                            0     0      0    1170
+                              _flash
+ ---------------------------------------------------------------------------------
+ (5) _flash                                                5     1      4    1170
+                                              0 COMMON     5     1      4
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 5
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _clock_test
+     _flash
+     _wait_until_next_halfsecond
+       _until_next_halfsecond
+         _flash_all *
+           _flash
+         _flash_dip_and_buttons *
+           _flash
+         _flash_halfHours *
+           _flash
+         _nop *
+   _for_entire_halfsecond
+     _until_next_halfsecond
+       _flash_all *
+         _flash
+       _flash_dip_and_buttons *
+         _flash
+       _flash_halfHours *
+         _flash
+       _nop *
+   _run_cycle
+     _flash_halfHours
+       _flash
+     _for_entire_bounce
+       _flash_halfHours *
+         _flash
+     _for_entire_halfsecond
+       _until_next_halfsecond
+         _flash_all *
+           _flash
+         _flash_dip_and_buttons *
+           _flash
+         _flash_halfHours *
+           _flash
+         _nop *
+     _motor_full_up
+       _wait_until_next_halfsecond
+         _until_next_halfsecond
+           _flash_all *
+             _flash
+           _flash_dip_and_buttons *
+             _flash
+           _flash_halfHours *
+             _flash
+           _nop *
+     _wait_entire_halfsecond
+       _for_entire_halfsecond
+         _until_next_halfsecond
+           _flash_all *
+             _flash
+           _flash_dip_and_buttons *
+             _flash
+           _flash_halfHours *
+             _flash
+           _nop *
+   _setup
+   _wakeup
+     _diagnose_buttons
+       _wait_entire_halfsecond
+         _for_entire_halfsecond
+           _until_next_halfsecond
+             _flash_all *
+               _flash
+             _flash_dip_and_buttons *
+               _flash
+             _flash_halfHours *
+               _flash
+             _nop *
+     _diagnose_lights
+       _wait_entire_halfsecond
+         _for_entire_halfsecond
+           _until_next_halfsecond
+             _flash_all *
+               _flash
+             _flash_dip_and_buttons *
+               _flash
+             _flash_halfHours *
+               _flash
+             _nop *
+     _for_entire_halfsecond
+       _until_next_halfsecond
+         _flash_all *
+           _flash
+         _flash_dip_and_buttons *
+           _flash
+         _flash_halfHours *
+           _flash
+         _nop *
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BITCOMMON            E      0       0       0        0.0%
+EEDATA             100      0       0       0        0.0%
+NULL                 0      0       0       0        0.0%
+CODE                 0      0       0       0        0.0%
+COMMON               E      E       E       1      100.0%
+BITSFR0              0      0       0       1        0.0%
+SFR0                 0      0       0       1        0.0%
+BITSFR1              0      0       0       2        0.0%
+SFR1                 0      0       0       2        0.0%
+STACK                0      0       0       2        0.0%
+BANK0               50     17      18       3       30.0%
+BITBANK1            50      0       0       4        0.0%
+BITSFR3              0      0       0       4        0.0%
+SFR3                 0      0       0       4        0.0%
+BANK1               50      0       0       5        0.0%
+BITSFR2              0      0       0       5        0.0%
+SFR2                 0      0       0       5        0.0%
+BITBANK2            50      0       0       6        0.0%
+BANK2               50      0       0       7        0.0%
+ABS                  0      0      26       8        0.0%
+BITBANK0            50      0       0       9        0.0%
+DATA                 0      0      26      10        0.0%
+
+
+Microchip Technology PIC Macro Assembler V1.34 build -361300703 
+Symbol Table                                                                                   Sun Jun 07 14:53:33 2015
+
+                    ??_motor_full_up 0020                                    pc 0002  
+                        __CFG_CP$OFF 0000                                  l211 07A3  
+                                l140 0594                                  l205 0789  
+                                l143 05B2                                  l135 0590  
+                                l144 05A5                                  l136 0583  
+                                l139 05A1                                  l180 0721  
+                                l148 05B6                                  l174 071E  
+                                l175 071A                                  l184 073D  
+                                l169 06A2                                  l179 0725  
+                                l189 0755                                  _RA0 0028  
+                                _RA1 0029                                  _RC0 0038  
+                                _RA4 002C                                  _RC1 0039  
+                                _RA5 002D                                  _RB4 0034  
+                                _RC3 003B                                  _RB5 0035  
+                                _RC4 003C                                  _RB6 0036  
+                                _RC5 003D                                  _RB7 0037  
+                                _RC6 003E                                  _RC7 003F  
+                       __CFG_CPD$OFF 0000                                  u700 0543  
+                                u720 0550                                  u714 0546  
+                                u740 055D                                  u805 04DD  
+                                u734 0553                                  u815 04EA  
+                                _PSA 040B                                  u760 056A  
+                                u825 04F7                                  u754 0560  
+                                u780 0577                                  u774 056D  
+                                u794 057A                                  u955 0660  
+                                u965 066D                                  u975 067A  
+                                _nop 07FB       __size_of_until_next_halfsecond 000E  
+                       __CFG_IESO$ON 0000        __end_of_until_next_halfsecond 0492  
+                               l1123 068D                                 l1037 0615  
+                               l1045 0485                                 l1061 0496  
+                               l1205 0730                                 l1039 0635  
+                               l1047 0490                                 l1223 075F  
+                               l1215 0748                                 l1207 0738  
+                               l1241 0774                                 l1217 0750  
+                               l1251 078D                                 l1219 0757  
+                               l1323 06AF                                 l1315 06BF  
+                               l1309 05C6                                 l1229 0768  
+                               l1271 07B0                                 l1247 0785  
+                               l1319 06AB                                 l1257 0792  
+                               l1283 07C3                                 l1267 07A9  
+                               l1291 07D3                                 l1189 0711  
+                               ?_nop 0070                                 u1305 06C9  
+                               u1315 06D6                                 u1325 06E3  
+                               u1275 05DA                                 u1285 05E7  
+                               _TMR0 0001                                 _WPUA 0095  
+                               _WPUB 0115                                 _main 06A4  
+                               btemp 007E                        __CFG_BOREN$ON 0000  
+                               ltemp 007E                                 start 0000  
+                               ttemp 007E                                 wtemp 007E  
+                   _diagnose_buttons 057F              ??_flash_dip_and_buttons 0075  
+                       main@dipValue 0035                                ??_nop 0070  
+                              ?_main 002D                        __CFG_WDTE$OFF 0000  
+                              _ANSEL 011E                                _IRCF0 047C  
+                              _IRCF1 047D                                _IRCF2 047E  
+                     __CFG_FCMEN$OFF 0000                                _flash 053C  
+                              _setup 0506                                main@i 0036  
+                              fpbase 0705                                pclath 000A  
+                              ltemp0 007E                                ltemp1 0082  
+                              ltemp2 0086                                ltemp3 0080  
+                              ttemp0 007E                                ttemp1 0081  
+                              ttemp2 0084                                ttemp3 0087  
+                              ttemp4 007F                                status 0003  
+                              wtemp0 007E                                wtemp1 0080  
+                              wtemp2 0082                                wtemp3 0084  
+                              wtemp4 0086                                wtemp5 0088  
+                              wtemp6 007F                       __CFG_MCLRE$OFF 0000  
+                    __initialization 07FC                         __end_of_main 0700  
+           __size_of_diagnose_lights 002F             ??_wait_entire_halfsecond 007E  
+     __size_of_for_entire_halfsecond 0008        __end_of_for_entire_halfsecond 0484  
+                             ??_main 0031                               ?_flash 0070  
+              for_entire_bounce@func 007D                               ?_setup 0070  
+                             _ANSELH 011F                               _TRISA0 0428  
+                             _TRISA1 0429                               _TRISC0 0438  
+                             _TRISA4 042C                               _TRISC1 0439  
+                             _TRISA5 042D                               _TRISB4 0434  
+                             _TRISC3 043B                               _TRISB5 0435  
+                             _TRISC4 043C                               _TRISB6 0436  
+                             _TRISC5 043D                               _TRISB7 0437  
+                             _TRISC6 043E                               _TRISC7 043F  
+                   __end_of__fptable 070E                       __CFG_PWRTE$OFF 0000  
+            run_cycle@minutesCounter 0028             __size_of_flash_halfHours 0036  
+                 fp__flash_halfHours 070A                               _wakeup 07D7  
+                             fp__nop 0706                               fptable 0700  
+                             fptotal 000C                entry__flash_halfHours 070A  
+            __end_of__initialization 07FD                       __pcstackCOMMON 0070  
+                      __end_of_flash 057F      __size_of_wait_entire_halfsecond 0004  
+                      __end_of_setup 053C                    ??_diagnose_lights 0021  
+                   diagnose_lights@i 0022                   __size_of_flash_all 000C  
+           __end_of_diagnose_buttons 05C3                              ??_flash 0074  
+                            ??_setup 0070                           __pbssBANK0 0037  
+               run_cycle@idleCounter 0029                           __pmaintext 06A4  
+     __size_of_flash_dip_and_buttons 004A        __end_of_flash_dip_and_buttons 0656  
+              __end_of_motor_full_up 06A4                              ?_wakeup 0070  
+                         _clock_test 05C3                    ??_flash_halfHours 0075  
+             _wait_entire_halfsecond 0478                _until_next_halfsecond 0484  
+                 __size_of_run_cycle 00C9                    __end_of_flash_all 07FB  
+       ??_wait_until_next_halfsecond 007E                              __ptext0 0000  
+                            __ptext1 07D7                              __ptext2 04A1  
+                            __ptext3 057F                              __ptext4 0506  
+                            __ptext5 070E                              __ptext6 0478  
+                            __ptext7 047C                              __ptext8 0656  
+                            __ptext9 0492                      __size_of_wakeup 0018  
+                       __size_of_nop 0001                              flash@t1 0074  
+                            flash@t2 0070                              flash@t3 0071  
+                            flash@t4 0072                              flash@t5 0073  
+               end_of_initialization 07FD  __size_of_wait_until_next_halfsecond 0004  
+                      run_cycle@idle 0027                              wakeup@i 0024  
+                  __end_of_run_cycle 07D7                          ?_clock_test 0070  
+           fp__flash_dip_and_buttons 070C                _for_entire_halfsecond 047C  
+             ?_until_next_halfsecond 0070                    _for_entire_bounce 0492  
+                    _diagnose_lights 04A1                   ?_for_entire_bounce 0070  
+                ??_for_entire_bounce 007D                       __end_of_wakeup 07EF  
+                start_initialization 07FC                          __end_of_nop 07FC  
+                  ?_diagnose_buttons 0070                   ??_diagnose_buttons 007E  
+          __end_of_for_entire_bounce 04A1                  __size_of_clock_test 0049  
+                    _flash_halfHours 04D0   __end_of_wait_until_next_halfsecond 0478  
+         _wait_until_next_halfsecond 0474                 run_cycle@shouldBreak 002B  
+                           ??_wakeup 0023               ?_for_entire_halfsecond 0070  
+          for_entire_halfsecond@func 0020              ?_wait_entire_halfsecond 0070  
+                          ___latbits 0001                        __pcstackBANK0 0020  
+                  __size_of__fptable 000E              __end_of_diagnose_lights 04D0  
+                          _halfHours 0037                            __pfunctab 0700  
+                          _flash_all 07EF                _flash_dip_and_buttons 060C  
+     __end_of_wait_entire_halfsecond 047C                       __size_of_flash 0043  
+                     __size_of_setup 0036              __end_of_flash_halfHours 0506  
+             __size_of_motor_full_up 004E                  motor_full_up@cycles 0024  
+         __size_of_for_entire_bounce 000F                           ?_flash_all 0070  
+                       ??_clock_test 0020                            _run_cycle 070E  
+            ??_until_next_halfsecond 007D                     ?_diagnose_lights 0070  
+                 __end_of_clock_test 060C                       motor_full_up@i 0025  
+          until_next_halfsecond@func 007D                           run_cycle@i 002C  
+             ?_flash_dip_and_buttons 0070                        _motor_full_up 0656  
+                         ?_run_cycle 0070                             __fptable 0700  
+                           __ptext10 05C3                             __ptext11 0474  
+                           __ptext12 0484                             __ptext13 060C  
+                           __ptext14 04D0                             __ptext15 07EF  
+                           __ptext16 07FB                             __ptext17 053C  
+                   ?_flash_halfHours 0070                        __size_of_main 005C  
+         run_cycle@halfSecondCounter 002A            __size_of_diagnose_buttons 0044  
+        ?_wait_until_next_halfsecond 0070              ??_for_entire_halfsecond 007E  
+                     ?_motor_full_up 0070                             main@argc 002D  
+                           main@argv 002F                          ??_flash_all 0075  
+                        ??_run_cycle 0026                           _OPTION_REG 0081  
+                        clock_test@a 0023                          clock_test@b 0024  
+                        clock_test@c 0025                          clock_test@d 0026  
+                        clock_test@i 0027                         fp__flash_all 0708  
+                  __CFG_FOSC$INTRCIO 0000  
